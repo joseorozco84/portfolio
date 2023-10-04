@@ -1,0 +1,75 @@
+import reflex as rx
+
+
+@rx.memo
+def navbar():
+    return rx.flex(
+        rx.flex(
+            rx.flex(
+                rx.container(
+                    rx.link(
+                        ".home",
+                        href="/",
+                        font_family="monospace",
+                        font_weight="bold",
+                        _hover={"color":"darkred"},
+                        user_select="none",
+                        ),
+                    ),
+                ),
+                rx.spacer(),
+                rx.flex(
+                    rx.container(
+                        rx.link(
+                            ".portfolio",
+                            href="/portfolio",
+                            font_family="monospace",
+                            _hover={"color":"darkred"},
+                            font_weight="bold",
+                            user_select="none",
+                        ),
+                    ),
+                    rx.spacer(),            
+                    rx.container(
+                        rx.link(
+                            ".about",
+                            href="/about",
+                            font_family="monospace",
+                            _hover={"color":"darkred"},
+                            font_weight="bold",
+                            user_select="none",
+                        ),
+                    ),
+                    rx.spacer(),
+                    rx.container(
+                        rx.link(
+                            ".contact",
+                            href="/contact",
+                            font_family="monospace",
+                            _hover={"color":"darkred"},
+                            font_weight="bold",
+                            user_select="none",
+                        ),
+                    ),
+                    justify_content="space-between",
+                    align_items="center",
+                ),
+            width="100%",
+            max_width="1200px",
+            min_width="50%",
+            min_height="6vh",
+            padding="0.5em",
+            text_color="white",
+            font_size=["0.8em","1.5em","2em","2.5em"],
+            align_items="center",
+            justify_content="space-evenly",
+            overflow="hidden",
+            ),
+        background_color="rgb(0, 0, 0, 0.5)",
+        position="fixed",
+        top="0",
+        z_index="1",
+        width="100%",
+        align_items="center",
+        justify_content="center",
+        )
