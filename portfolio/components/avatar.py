@@ -30,6 +30,7 @@ def avatar():
         margin="2em",
             ),
         
+        
         background_color="rgb(1, 1, 1, 0.25)",
         backdrop_filter="blur(5px)",
         # max_width="1200px",
@@ -39,6 +40,6 @@ def avatar():
         border_radius="1em",
         _hover={
             "transform": "scale(1.1)",
-            "transition": "0.3s",
+            "transition": "0.5s",
             },
         )

@@ -39,8 +39,8 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["25%", "25%", "15%", "10%"], "gap": "1em", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
-  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.25)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "_hover": {"transform": "scale(1.1)", "transition": "0.3s"}}}>
+  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "gap": "1em", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
+  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.25)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "_hover": {"transform": "scale(1.1)", "transition": "0.5s"}}}>
   <VStack sx={{"margin": "2em"}}>
   <Image src={`/pic.jpg`} sx={{"width": ["250px", "350px", "350px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
   <Text sx={{"fontSize": ["1.8em", "2.5em", "3em"], "fontFamily": "monospace", "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
