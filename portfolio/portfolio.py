@@ -13,7 +13,7 @@ class State(rx.State):
 
     pass
 
-
+# home page
 def home() -> rx.Component:
     return rx.box(
         rx.vstack(
@@ -30,6 +30,7 @@ def home() -> rx.Component:
         
     )
 
+# about page
 def about() -> rx.Component:
     return rx.box(
         rx.vstack(
@@ -46,8 +47,25 @@ def about() -> rx.Component:
         
     )
 
+# contact page
+def contact() -> rx.Component:
+    return rx.box(
+        rx.vstack(
+            navbar.navbar(),
+        ),
+        max_width="100%",
+        # background_color="rgb(1, 1, 1, 0.25)",
+        min_height="100vh",
+        background_image="/code_des.jpg",
+        background_position="center",
+        background_repeat="no-repeat",
+        background_size="cover",
+        
+    )
+
 # Add state and page to the app.
 app = rx.App()
 app.add_page(home)
 app.add_page(about)
+app.add_page(contact)
 app.compile()

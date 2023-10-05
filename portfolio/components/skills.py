@@ -47,7 +47,7 @@ def skills():
         text_color="white",
         font_size=["1.2em","1.5em", "1.8em", "1.8em", "2em"],
         justify_content="space-evenly",
-        background_color="rgb(1, 1, 1, 0.25)",
+        background_color="rgb(1, 1, 1, 0.15)",
         backdrop_filter="blur(5px)",
         border_radius="1em",
         min_height="250px",

@@ -3,8 +3,7 @@ import reflex as rx
 def info():
     return rx.box(
         rx.text(
-            """
-            Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
+            """Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.
             I am an enthusiastic self-learner who is motivated by technological challenges and quickly acquires new skills and technologies.
             I have the versatility to work both collaboratively in teams and independently.
@@ -14,7 +13,7 @@ def info():
             font_family="monospace",
             margin="3%"
         ),
-        background_color="rgb(1, 1, 1, 0.25)",
+        background_color="rgb(1, 1, 1, 0.15)",
         backdrop_filter="blur(5px)",
         border_radius="1em",
         _hover={

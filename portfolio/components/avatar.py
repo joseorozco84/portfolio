@@ -29,7 +29,7 @@ def avatar():
                 ),
             margin="2em",
             ),        
-        background_color="rgb(1, 1, 1, 0.25)",
+        background_color="rgb(1, 1, 1, 0.15)",
         backdrop_filter="blur(5px)",
         border_radius="1em",
         _hover={
