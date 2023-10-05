@@ -9,7 +9,7 @@ def navbar():
                 rx.container(
                     rx.link(
                         ".home",
-                        href="/",
+                        href="/home",
                         font_family="monospace",
                         font_weight="bold",
                         _hover={"color":"darkred"},

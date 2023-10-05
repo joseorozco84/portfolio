@@ -27,16 +27,10 @@ def avatar():
                 font_family="monospace",
                 user_select="none",
                 ),
-        margin="2em",
-            ),
-        
-        
+            margin="2em",
+            ),        
         background_color="rgb(1, 1, 1, 0.25)",
         backdrop_filter="blur(5px)",
-        # max_width="1200px",
-        # margin_top=["25%","15%","15%","10%"],
-        # width=["90%","90%","80%"],
-        # overflow="hidden",
         border_radius="1em",
         _hover={
             "transform": "scale(1.1)",

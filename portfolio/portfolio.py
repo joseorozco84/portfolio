@@ -1,7 +1,7 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 from rxconfig import config
 import reflex as rx
-from .components import avatar, navbar
+from .components import navbar
 from .pages	import home_page, about_page
 
 docs_url = "https://reflex.dev/docs/getting-started/introduction"
@@ -34,6 +34,7 @@ def about() -> rx.Component:
     return rx.box(
         rx.vstack(
             navbar.navbar(),
+            about_page.about(),
         ),
         max_width="100%",
         # background_color="rgb(1, 1, 1, 0.25)",

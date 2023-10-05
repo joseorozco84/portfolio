@@ -10,7 +10,7 @@ export const Navbar = memo(({}) => (
   <Flex sx={{"width": "100%", "maxWidth": "1200px", "minWidth": "50%", "minHeight": "6vh", "padding": "0.5em", "textColor": "white", "fontSize": ["0.8em", "1.5em", "2em", "2.5em"], "alignItems": "center", "justifyContent": "space-evenly", "overflow": "hidden"}}>
   <Flex>
   <Container>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "monospace", "fontWeight": "bold", "_hover": {"color": "darkred"}, "userSelect": "none"}}>
+  <Link as={NextLink} href={`/home`} sx={{"fontFamily": "monospace", "fontWeight": "bold", "_hover": {"color": "darkred"}, "userSelect": "none"}}>
   {`.home`}
 </Link>
 </Container>
