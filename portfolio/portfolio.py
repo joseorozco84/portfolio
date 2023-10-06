@@ -2,7 +2,7 @@
 from rxconfig import config
 import reflex as rx
 from .components import navbar
-from .pages	import home_page, about_page
+from .pages	import home_page, about_page, contact_page
 
 docs_url = "https://reflex.dev/docs/getting-started/introduction"
 filename = f"{config.app_name}/{config.app_name}.py"
@@ -52,6 +52,7 @@ def contact() -> rx.Component:
     return rx.box(
         rx.vstack(
             navbar.navbar(),
+            contact_page.contact(),
         ),
         max_width="100%",
         # background_color="rgb(1, 1, 1, 0.25)",
