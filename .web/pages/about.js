@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { E, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Heading, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import NextHead from "next/head"
 
@@ -40,7 +40,10 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <SimpleGrid sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
-  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none", "_hover": {"transform": "scale(1.1)", "transition": "0.5s"}}}>
+  <VStack sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none"}}>
+  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "margin": "3%", "marginBottom": "0"}}>
+  {`About me`}
+</Heading>
   <Text sx={{"textColor": "white", "fontSize": ["1em", "1.8em", "2.2em", "2.5em"], "fontFamily": "monospace", "margin": "3%"}}>
   {`Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.
@@ -48,7 +51,7 @@ export default function Component() {
             I have the versatility to work both collaboratively in teams and independently.
             My determination and dedication drive me to achieve my goals and exceed expectations in every project I undertake.`}
 </Text>
-</Box>
+</VStack>
 </SimpleGrid>
 </VStack>
 </Box>

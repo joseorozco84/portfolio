@@ -6,26 +6,37 @@ def form():
             rx.form(
                 rx.vstack(
                     rx.heading(
-                        "Send me a message",
+                        "📝 Send me a message",
                         font_family="monospace",
                         user_select="none",
-                        text_color="gray",
+                        text_color="rgb(255, 255, 255)",
                     ),
                     rx.input(
-                        placeholder="Name",
+                        placeholder="Name...",
                         id="name",
-                        bg_color="rgb(255, 255, 255, 0.15)",
-                        text_color="white",
+                        bg_color="rgb(255, 255, 255, 0.75)",
+                        text_color="black",
                         overflow="hidden",
                         border_color="transparent",
                         font_family="monospace",
+                    
+                    ),
+                    rx.input(
+                        placeholder="Email...",
+                        id="name",
+                        bg_color="rgb(255, 255, 255, 0.75)",
+                        text_color="black",
+                        overflow="hidden",
+                        border_color="transparent",
+                        font_family="monospace",
+                    
                     ),
                     rx.text_area(
                         placeholder="Write your message here...",
                         id="message",
-                        bg_color="rgb(255, 255, 255, 0.15)",
+                        bg_color="rgb(255, 255, 255, 0.75)",
                         height="300px",
-                        text_color="white",
+                        text_color="black",
                         border_color="transparent",
                         resize="none",
                         font_family="monospace",

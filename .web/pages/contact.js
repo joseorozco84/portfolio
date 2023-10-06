@@ -33,8 +33,8 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
   <Fragment><Fragment>
@@ -46,11 +46,12 @@ export default function Component() {
   <Box>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
-  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "gray"}}>
-  {`Send me a message`}
+  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)"}}>
+  {`📝 Send me a message`}
 </Heading>
-  <Input id={`name`} placeholder={`Name`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.15)", "textColor": "white", "overflow": "hidden", "borderColor": "transparent", "fontFamily": "monospace"}} type={`text`}/>
-  <Textarea id={`message`} placeholder={`Write your message here...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.15)", "height": "300px", "textColor": "white", "borderColor": "transparent", "resize": "none", "fontFamily": "monospace", "maxHeight": "200px"}}/>
+  <Input id={`name`} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent", "fontFamily": "monospace"}} type={`text`}/>
+  <Input id={`name`} placeholder={`Email...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent", "fontFamily": "monospace"}} type={`text`}/>
+  <Textarea id={`message`} placeholder={`Write your message here...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "fontFamily": "monospace", "maxHeight": "200px"}}/>
   <Button colorScheme={`green`} size={`md`} sx={{"fontFamily": "monospace", "_hover": {"transform": "scale(1.3)", "transition": "0.5s"}}}>
   {`Send`}
 </Button>

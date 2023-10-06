@@ -53,19 +53,19 @@ export default function Component() {
 </Box>
   <VStack justifyContent={`space-evenly`} sx={{"fontFamily": "monospace", "textColor": "white", "fontSize": ["1.2em", "1.5em", "1.8em", "1.8em", "2em"], "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "minHeight": "250px", "margin": "2em", "userSelect": "none"}}>
   <Text sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
-  {`Programming Skills 💻`}
+  {`💻 Programming Skills`}
 </Text>
   <Text sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
-  {`Problem-Solving 🧩`}
+  {`🧩 Problem-Solving`}
 </Text>
   <Text sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
-  {`Team Collaboration 🤝`}
+  {`🤝 Team Collaboration`}
 </Text>
   <Text sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
-  {`Project Management 📂`}
+  {`📂 Project Management`}
 </Text>
   <Text sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
-  {`Adaptability 🌟`}
+  {`🌟 Adaptability`}
 </Text>
 </VStack>
 </SimpleGrid>

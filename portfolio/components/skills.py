@@ -3,7 +3,7 @@ import reflex as rx
 def skills():
     return rx.vstack(
         rx.text(
-            "Programming Skills 💻",
+            "💻 Programming Skills",
             _hover={
                 "transform": "scale(1.1)",
                 "transition": "0.5s",
@@ -11,7 +11,7 @@ def skills():
                 },
             ),
         rx.text(
-            "Problem-Solving 🧩",
+            "🧩 Problem-Solving",
             _hover={
                 "transform": "scale(1.1)",
                 "transition": "0.5s",
@@ -19,7 +19,7 @@ def skills():
                 },
             ),
         rx.text(
-            "Team Collaboration 🤝",
+            "🤝 Team Collaboration",
             _hover={
                 "transform": "scale(1.1)",
                 "transition": "0.5s",
@@ -28,7 +28,7 @@ def skills():
             )
             ,
         rx.text(
-            "Project Management 📂",
+            "📂 Project Management",
             _hover={
                 "transform": "scale(1.1)",
                 "transition": "0.5s",
@@ -36,7 +36,7 @@ def skills():
                 },
             ),
         rx.text(
-            "Adaptability 🌟",
+            "🌟 Adaptability",
             _hover={
                 "transform": "scale(1.1)",
                 "transition": "0.5s",
