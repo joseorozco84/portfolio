@@ -43,7 +43,7 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["25%", "20%", "20%", "15%", "10%"], "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
+  <SimpleGrid sx={{"marginTop": ["25%", "20%", "20%", "15%", "10%"], "marginBottom": "10%", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
   <Box sx={{"maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em"}}>
   <Box>
   <Box as={`form`}>

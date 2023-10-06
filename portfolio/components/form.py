@@ -90,7 +90,7 @@ def form():
                     is_open=ModalState.show,
                 ),
                 justify_content="center",
-            )
+            ),
         ),
         max_width="800px",
         padding=["2em","2em","3em","3em"],
