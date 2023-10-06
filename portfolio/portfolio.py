@@ -58,7 +58,7 @@ def contact() -> rx.Component:
 
 # Add state and page to the app.
 app = rx.App()
-app.add_page(home)
+app.add_page(home, route="/")
 app.add_page(about)
 app.add_page(contact)
 app.compile()

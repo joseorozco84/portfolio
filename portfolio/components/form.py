@@ -39,7 +39,7 @@ def form():
                         font_family="monospace",
                     ),
                     rx.text_area(
-                        placeholder="Write your message here...",
+                        placeholder="Write your message...",
                         id="message",
                         bg_color="rgb(255, 255, 255, 0.75)",
                         height="300px",
