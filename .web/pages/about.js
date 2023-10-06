@@ -40,7 +40,7 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <SimpleGrid sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
-  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "_hover": {"transform": "scale(1.1)", "transition": "0.5s"}}}>
+  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none", "_hover": {"transform": "scale(1.1)", "transition": "0.5s"}}}>
   <Text sx={{"textColor": "white", "fontSize": ["1em", "1.8em", "2.2em", "2.5em"], "fontFamily": "monospace", "margin": "3%"}}>
   {`Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.

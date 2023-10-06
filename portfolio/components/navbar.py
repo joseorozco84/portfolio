@@ -60,7 +60,7 @@ def navbar():
             min_height="6vh",
             padding="0.5em",
             text_color="white",
-            font_size=["0.8em","1.5em","2em","2.5em"],
+            font_size=["0.8em","1.8em","2em","2.5em"],
             align_items="center",
             justify_content="space-evenly",
             overflow="hidden",

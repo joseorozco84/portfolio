@@ -33,7 +33,7 @@ def avatar():
         backdrop_filter="blur(5px)",
         border_radius="1em",
         _hover={
-            "transform": "scale(1.1)",
+            "transform": "scale(1.05)",
             "transition": "0.5s",
             },
         )
