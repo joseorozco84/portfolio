@@ -11,7 +11,7 @@ def avatar():
                 user_select="none",
                 margin="1em",
                 ),
-            rx.text(
+            rx.heading(
                 "Hi! I'm Jose",
                 font_size=["1.8em","2.5em","3em"],
                 font_family="monospace",

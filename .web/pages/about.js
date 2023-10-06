@@ -9,7 +9,7 @@ import NextHead from "next/head"
 
 
 export default function Component() {
-  const state = useContext(StateContext)
+  const modal_state = useContext(StateContext)
   const router = useRouter()
   const { colorMode, toggleColorMode } = useColorMode()
   const focusRef = useRef();
@@ -26,7 +26,7 @@ export default function Component() {
 
   // Route after the initial page hydration.
   useEffect(() => {
-    const change_complete = () => Event([E('state.hydrate', {})])
+    const change_complete = () => Event([E('modal_state.hydrate', {})])
     router.events.on('routeChangeComplete', change_complete)
     return () => {
       router.events.off('routeChangeComplete', change_complete)
@@ -40,11 +40,11 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <SimpleGrid sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
-  <VStack sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none"}}>
-  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "margin": "3%", "marginBottom": "0"}}>
+  <VStack sx={{"padding": "1em", "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none"}}>
+  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "margin": "3%", "marginBottom": "0", "fontSize": "2.5em"}}>
   {`About me`}
 </Heading>
-  <Text sx={{"textColor": "white", "fontSize": ["1em", "1.8em", "2.2em", "2.5em"], "fontFamily": "monospace", "margin": "3%"}}>
+  <Text sx={{"textColor": "white", "fontSize": ["1em", "1.8em", "2em", "2em"], "fontFamily": "monospace", "margin": "3%"}}>
   {`Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.
             I am an enthusiastic self-learner who is motivated by technological challenges and quickly acquires new skills and technologies.

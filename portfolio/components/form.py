@@ -1,8 +1,15 @@
 import reflex as rx
 
+
+class ModalState(rx.State):
+    show: bool = False
+
+    def change(self):
+        self.show = not (self.show)
+
 def form():
     return rx.box(
-    rx.box(
+        rx.box(
             rx.form(
                 rx.vstack(
                     rx.heading(
@@ -10,6 +17,7 @@ def form():
                         font_family="monospace",
                         user_select="none",
                         text_color="rgb(255, 255, 255)",
+                        font_size=["1.5em","1.8em", "1.8em", "1.8em", "2em"],
                     ),
                     rx.input(
                         placeholder="Name...",
@@ -19,17 +27,16 @@ def form():
                         overflow="hidden",
                         border_color="transparent",
                         font_family="monospace",
-                    
+                        is_required=True,
                     ),
                     rx.input(
                         placeholder="Email...",
-                        id="name",
+                        id="email",
                         bg_color="rgb(255, 255, 255, 0.75)",
                         text_color="black",
                         overflow="hidden",
                         border_color="transparent",
                         font_family="monospace",
-                    
                     ),
                     rx.text_area(
                         placeholder="Write your message here...",
@@ -41,22 +48,49 @@ def form():
                         resize="none",
                         font_family="monospace",
                         max_height="200px",
-                        # overflow="hidden",
-                        # text_overflow="ellipsis",
+                        is_required=True,
                     ),
                     rx.button(
                         "Send",
+                        rx.icon(
+                            tag="email",
+                        ),
                         color_scheme="green",
-                        size="md",
+                        size="lg",
                         font_family="monospace",
                         _hover={
-                            "transform": "scale(1.3)",
-                            "transition": "0.5s",
+                            "transform": "scale(1.1)",
+                            "transition": "0.25s",
                         },
+                        column_gap="5px",
+                        on_click=ModalState.change,
                     ),
                     row_gap="2em",
                 ),
             ),
+            rx.box(
+                rx.modal(
+                    rx.modal_overlay(
+                        rx.modal_content(
+                            rx.modal_header("Confirm"),
+                            rx.modal_body(
+                                "Your message has been sent!"
+                            ),
+                            rx.modal_footer(
+                                rx.button(
+                                    "Close", on_click=ModalState.change,
+                                    color_scheme="green",
+                                )
+                            ),
+                            font_family="monospace",
+                            max_width="300px",
+                            bg_color="rgb(255, 255, 255)",
+                        )
+                    ),
+                    is_open=ModalState.show,
+                ),
+                justify_content="center",
+            )
         ),
         max_width="800px",
         padding=["2em","2em","3em","3em"],

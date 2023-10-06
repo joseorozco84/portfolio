@@ -4,14 +4,6 @@ import reflex as rx
 from .components import navbar
 from .pages	import home_page, about_page, contact_page
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
-
-
-class State(rx.State):
-    """The app state."""
-
-    pass
 
 # home page
 def home() -> rx.Component:

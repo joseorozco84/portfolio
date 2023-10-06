@@ -9,6 +9,7 @@ def info():
             text_color="rgb(255, 255, 255)",
             margin="3%",
             margin_bottom="0",
+            font_size="2.5em",
         ),
         rx.text(
             """Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
@@ -17,11 +18,11 @@ def info():
             I have the versatility to work both collaboratively in teams and independently.
             My determination and dedication drive me to achieve my goals and exceed expectations in every project I undertake.""",
             text_color="white",
-            font_size=["1em","1.8em","2.2em","2.5em"],
+            font_size=["1em","1.8em","2em","2em"],
             font_family="monospace",
             margin="3%",
         ),
-        
+        padding="1em",
         background_color="rgb(1, 1, 1, 0.15)",
         backdrop_filter="blur(5px)",
         border_radius="1em",

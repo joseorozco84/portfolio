@@ -3,13 +3,13 @@ import { useRouter } from "next/router"
 import { E, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Image, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Heading, Image, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import NextHead from "next/head"
 
 
 export default function Component() {
-  const state = useContext(StateContext)
+  const modal_state = useContext(StateContext)
   const router = useRouter()
   const { colorMode, toggleColorMode } = useColorMode()
   const focusRef = useRef();
@@ -26,7 +26,7 @@ export default function Component() {
 
   // Route after the initial page hydration.
   useEffect(() => {
-    const change_complete = () => Event([E('state.hydrate', {})])
+    const change_complete = () => Event([E('modal_state.hydrate', {})])
     router.events.on('routeChangeComplete', change_complete)
     return () => {
       router.events.off('routeChangeComplete', change_complete)
@@ -43,9 +43,9 @@ export default function Component() {
   <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "_hover": {"transform": "scale(1.05)", "transition": "0.5s"}}}>
   <VStack sx={{"margin": "2em"}}>
   <Image src={`/pic.jpg`} sx={{"width": ["250px", "350px", "350px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
-  <Text sx={{"fontSize": ["1.8em", "2.5em", "3em"], "fontFamily": "monospace", "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
+  <Heading sx={{"fontSize": ["1.8em", "2.5em", "3em"], "fontFamily": "monospace", "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
   {`Hi! I'm Jose`}
-</Text>
+</Heading>
   <Text sx={{"textColor": "green", "fontSize": ["1.5em", "1.8em", "2em"], "fontFamily": "monospace", "userSelect": "none"}}>
   {`jr.developer`}
 </Text>
