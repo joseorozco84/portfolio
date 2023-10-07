@@ -34,9 +34,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
   <Fragment><Fragment>
@@ -47,7 +47,7 @@ export default function Component() {
   <Box sx={{"maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em"}}>
   <Box>
   <Box as={`form`}>
-  <VStack sx={{"rowGap": "2em"}}>
+  <VStack sx={{"rowGap": "1em"}}>
   <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
   {`📝 Send me a message`}
 </Heading>

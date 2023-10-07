@@ -65,7 +65,7 @@ def form():
                         column_gap="5px",
                         on_click=ModalState.change,
                     ),
-                    row_gap="2em",
+                    row_gap="1em",
                 ),
             ),
             rx.box(
