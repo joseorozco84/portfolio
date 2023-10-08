@@ -10,7 +10,7 @@ export const Navbar = memo(({}) => (
   <Flex sx={{"width": "100%", "maxWidth": "1200px", "minWidth": "50%", "minHeight": "6vh", "padding": "0.5em", "textColor": "white", "fontSize": ["0.8em", "1.8em", "2em", "2em"], "alignItems": "center", "justifyContent": "space-evenly", "overflow": "hidden"}}>
   <Flex>
   <Container>
-  <Link as={NextLink} href={`/home`} sx={{"fontFamily": "monospace", "fontWeight": "bold", "_hover": {"color": "darkred"}, "userSelect": "none"}}>
+  <Link as={NextLink} href={`/home`} sx={{"fontWeight": "bold", "_hover": {"color": "darkred"}, "userSelect": "none"}}>
   {`.home`}
 </Link>
 </Container>
@@ -18,19 +18,19 @@ export const Navbar = memo(({}) => (
   <Spacer/>
   <Flex sx={{"justifyContent": "space-between", "alignItems": "center"}}>
   <Container>
-  <Link as={NextLink} href={`/portfolio`} sx={{"fontFamily": "monospace", "_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/portfolio`} sx={{"_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.portfolio`}
 </Link>
 </Container>
   <Spacer/>
   <Container>
-  <Link as={NextLink} href={`/about`} sx={{"fontFamily": "monospace", "_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/about`} sx={{"_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.about`}
 </Link>
 </Container>
   <Spacer/>
   <Container>
-  <Link as={NextLink} href={`/contact`} sx={{"fontFamily": "monospace", "_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/contact`} sx={{"_hover": {"color": "darkred"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.contact`}
 </Link>
 </Container>

@@ -10,5 +10,5 @@ def about():
         margin_bottom="10%",
         border_radius="1em",
         width=["90%","90%","80%"],
-        max_width="1200px",
+        max_width="800px",
     )

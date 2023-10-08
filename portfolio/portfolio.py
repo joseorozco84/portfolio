@@ -56,9 +56,14 @@ def contact() -> rx.Component:
         
     )
 
+style = {
+    "font_family": "monospace",
+    "text_color": "white",
+}
+
 # Add state and page to the app.
-app = rx.App()
-app.add_page(home, route="/")
+app = rx.App(style=style)
+app.add_page(home)
 app.add_page(about)
 app.add_page(contact)
 app.compile()

@@ -34,8 +34,8 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
@@ -48,13 +48,13 @@ export default function Component() {
   <Box>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "1em"}}>
-  <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
-  {`📝 Send me a message`}
+  <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
+  {`📝 Contact me`}
 </Heading>
-  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent", "fontFamily": "monospace"}} type={`text`}/>
-  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent", "fontFamily": "monospace"}} type={`text`}/>
-  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "fontFamily": "monospace", "maxHeight": "200px"}}/>
-  <Button colorScheme={`green`} onClick={_e => Event([E("modal_state.change", {})], _e)} size={`lg`} sx={{"fontFamily": "monospace", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}, "columnGap": "5px"}}>
+  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
+  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
+  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "maxHeight": "200px"}}/>
+  <Button colorScheme={`green`} onClick={_e => Event([E("modal_state.change", {})], _e)} size={`lg`} sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.25s"}, "columnGap": "5px"}}>
   {`Send`}
   <EmailIcon/>
 </Button>
@@ -63,7 +63,7 @@ export default function Component() {
   <Box sx={{"justifyContent": "center"}}>
   <Modal isOpen={modal_state.show}>
   <ModalOverlay>
-  <ModalContent sx={{"fontFamily": "monospace", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)"}}>
+  <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)"}}>
   <ModalHeader>
   {`Confirm`}
 </ModalHeader>

@@ -13,8 +13,7 @@ def form():
             rx.form(
                 rx.vstack(
                     rx.heading(
-                        "📝 Send me a message",
-                        font_family="monospace",
+                        "📝 Contact me",
                         user_select="none",
                         text_color="rgb(255, 255, 255)",
                         font_size=["1.5em","1.8em", "1.8em", "1.8em", "2em"],
@@ -26,7 +25,6 @@ def form():
                         text_color="black",
                         overflow="hidden",
                         border_color="transparent",
-                        font_family="monospace",
                         is_required=True,
                     ),
                     rx.input(
@@ -36,7 +34,6 @@ def form():
                         text_color="black",
                         overflow="hidden",
                         border_color="transparent",
-                        font_family="monospace",
                     ),
                     rx.text_area(
                         placeholder="Write your message...",
@@ -46,7 +43,6 @@ def form():
                         text_color="black",
                         border_color="transparent",
                         resize="none",
-                        font_family="monospace",
                         max_height="200px",
                         is_required=True,
                     ),
@@ -57,7 +53,6 @@ def form():
                         ),
                         color_scheme="green",
                         size="lg",
-                        font_family="monospace",
                         _hover={
                             "transform": "scale(1.1)",
                             "transition": "0.25s",
@@ -82,7 +77,7 @@ def form():
                                     color_scheme="green",
                                 )
                             ),
-                            font_family="monospace",
+                            text_color="black",
                             max_width="300px",
                             bg_color="rgb(255, 255, 255)",
                         )

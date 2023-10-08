@@ -13,8 +13,8 @@ def avatar():
                 ),
             rx.heading(
                 "Hi! I'm Jose",
-                font_size=["1.8em","2.5em","3em"],
                 font_family="monospace",
+                font_size=["1.8em","2.5em","3em"],
                 border_radius="0.3em",
                 text_color="white",
                 text_shadow="0px 0px 10px black",
@@ -24,7 +24,6 @@ def avatar():
                 "jr.developer",
                 text_color="green",
                 font_size=["1.5em","1.8em","2em"],
-                font_family="monospace",
                 user_select="none",
                 ),
             margin="2em",
