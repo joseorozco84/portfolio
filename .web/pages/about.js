@@ -59,11 +59,11 @@ export default function Component() {
 </Heading>
   <Text sx={{"textColor": "white", "fontSize": ["1em", "1.5em", "1.5em", "1.5em"], "fontFamily": "monospace", "margin": "3%"}}>
   {`Welcome to my portfolio! Built with `}
-  <Link as={NextLink} href={`https://www.python.org/`} sx={{"color": "rgb(121,246,99)"}}>
+  <Link as={NextLink} href={`https://www.python.org/`} isExternal={true} sx={{"color": "rgb(121,246,99)"}}>
   {`Python`}
 </Link>
   {` 🐍 and `}
-  <Link as={NextLink} href={`https://reflex.dev/`} sx={{"color": "rgb(107,99,246)"}}>
+  <Link as={NextLink} href={`https://reflex.dev/`} isExternal={true} sx={{"color": "rgb(107,99,246)"}}>
   {`Reflex`}
 </Link>
   {` framework, this website is where I showcase my projects and skills. It's a work in progress, and I'm excited to share my journey with you. `}

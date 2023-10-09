@@ -44,9 +44,9 @@ def page():
         ),
         rx.text(
             """Welcome to my portfolio! Built with """,
-            rx.link("Python",href="https://www.python.org/",color="rgb(121,246,99)",),
+            rx.link("Python",href="https://www.python.org/",color="rgb(121,246,99)",is_external=True,),
             """ 🐍 and """,
-            rx.link("Reflex",href="https://reflex.dev/",color="rgb(107,99,246)",),
+            rx.link("Reflex",href="https://reflex.dev/",color="rgb(107,99,246)",is_external=True,),
             """ framework, this website is where I showcase my projects and skills. It's a work in progress, and I'm excited to share my journey with you. """,
             text_color="white",
             font_size=["1em","1.5em","1.5em","1.5em"],
