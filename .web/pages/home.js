@@ -51,7 +51,7 @@ export default function Component() {
 </Text>
 </VStack>
 </Box>
-  <Center sx={{"justifyContent": "space-evenly", "fontSize": ["1.3em", "1.8em", "1.8em", "2em", "2.3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "minHeight": "350px", "userSelect": "none"}}>
+  <Center sx={{"justifyContent": "space-evenly", "fontWeight": "bold", "fontSize": ["1.5em", "2em", "2em", "2em", "2.5em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "minHeight": "350px", "userSelect": "none"}}>
   <List spacing={`1em`} sx={{"margin": "1em"}}>
   <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
   {`💻 Programming Skills`}
