@@ -27,4 +27,35 @@ def info():
         backdrop_filter="blur(5px)",
         border_radius="10px",
         user_select="none",
+        max_width="800px",
+    )
+
+def page():
+    return rx.box(
+        rx.heading(
+            "About this website",
+            font_family="monospace",
+            user_select="none",
+            text_color="rgb(255, 255, 255)",
+            margin="3%",
+            margin_bottom="0",
+            font_size="2em",
+        ),
+        rx.text(
+            """Welcome to my portfolio! Built with """,
+            rx.link("Python",href="https://www.python.org/",color="rgb(121,246,99)",),
+            """ and """,
+            rx.link("Reflex",href="https://reflex.dev/",color="rgb(107,99,246)",),
+            """ framework, this website is where I showcase my projects and skills. 🐍💻 It's a work in progress, and I'm excited to share my journey with you. """,
+            text_color="white",
+            font_size=["1em","1.5em","1.5em","1.5em"],
+            font_family="monospace",
+            margin="3%",
+        ),
+        backdrop_filter="blur(5px)",
+        border_radius="10px",
+        user_select="none",
+        padding="1em",
+        height="fit-content",
+        bg_color="gray",
     )
