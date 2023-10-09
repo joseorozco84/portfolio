@@ -3,9 +3,10 @@ import { useRouter } from "next/router"
 import { E, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, set_val, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Button, Heading, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Button, Heading, HStack, Image, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import { EmailIcon } from "@chakra-ui/icons"
+import NextLink from "next/link"
 import NextHead from "next/head"
 
 
@@ -35,17 +36,17 @@ export default function Component() {
   }, [router])
 
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
 
   return (
   <Fragment><Fragment>
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
-  <Box sx={{"maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
-  <Box sx={{"justifyContent": "center", "maxHeight": "100vh"}}>
+  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "800px", "gap": "20px"}}>
+  <Box>
+  <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
@@ -61,8 +62,8 @@ export default function Component() {
 </VStack>
 </Box>
   <Box>
-  <Modal isOpen={modal_state.show}>
-  <ModalOverlay>
+  <Modal isCentered={true} isOpen={modal_state.show}>
+  <ModalOverlay sx={{"userSelect": "none"}}>
   <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)"}}>
   <ModalHeader>
   {`Confirm`}
@@ -80,6 +81,26 @@ export default function Component() {
 </Modal>
 </Box>
 </Box>
+</Box>
+  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <HStack>
+  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
+  <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>
+  <Image src={`/github.png`} sx={{"width": "48px"}}/>
+  <Text>
+  {`GitHub`}
+</Text>
+</VStack>
+</Link>
+  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
+  <VStack sx={{"bgColor": "rgb(30, 63, 100, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(30, 63, 100, 0.95)"}}}>
+  <Image src={`/linkedin.png`} sx={{"width": "48px"}}/>
+  <Text>
+  {`Linkedin`}
+</Text>
+</VStack>
+</Link>
+</HStack>
 </Box>
 </SimpleGrid>
 </VStack>

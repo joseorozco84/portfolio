@@ -80,17 +80,76 @@ def form():
                             text_color="black",
                             max_width="300px",
                             bg_color="rgb(255, 255, 255)",
-                        )
+                        ),
+                        user_select="none",
                     ),
                     is_open=ModalState.show,
+                    is_centered=True,
                 ),
             ),
             justify_content="center",
             max_height="100vh",
+            max_width="800px",
+            padding=["2em","2em","3em","3em"],
+            # background_color="rgb(20, 20, 20, 0.5)",
+            backdrop_filter="blur(5px)",
+            border_radius="10px",
         ),
+    )
+
+
+def social():
+    return rx.box(
+        rx.hstack(
+            rx.link(
+                rx.vstack(
+                    rx.image(
+                        src="/github.png",
+                        width="48px"
+                    ),
+                    rx.text("GitHub"),
+                    bg_color="rgb(97, 30, 30, 0.45)",
+                    border_radius="5px",
+                    padding="20px",
+                    width="100px",
+                    _hover={
+                        "transform": "scale(1.1)",
+                        "transition": "0.25s",
+                        "bg_color": "rgb(97, 30, 30, 0.95)",
+                    },
+                ),
+                href="https://github.com/joseorozco84",
+                is_external=True,
+            ),
+            rx.link(
+                rx.vstack(
+                    rx.image(
+                        src="/linkedin.png",
+                        width="48px"
+                    ),
+                    rx.text("Linkedin"),
+                    bg_color="rgb(30, 63, 100, 0.45)",
+                    border_radius="5px",
+                    padding="20px",
+                    width="100px",
+                    _hover={
+                        "transform": "scale(1.1)",
+                        "transition": "0.25s",
+                        "bg_color": "rgb(30, 63, 100, 0.95)",
+                    },
+                ),
+                href="https://www.linkedin.com/in/jose-orozco-79367143/",
+                is_external=True,
+            ),
+        ),
+        justify_content="center",
+        # max_height="100vh",
         max_width="800px",
         padding=["2em","2em","3em","3em"],
         # background_color="rgb(20, 20, 20, 0.5)",
         backdrop_filter="blur(5px)",
         border_radius="10px",
+        place_self="center",
+        user_select="none",
+        
     )
