@@ -34,20 +34,20 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
   <Fragment><Fragment>
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["25%", "20%", "20%", "15%", "10%"], "marginBottom": "10%", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
-  <Box sx={{"maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em"}}>
-  <Box>
+  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
+  <Box sx={{"maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
+  <Box sx={{"justifyContent": "center", "maxHeight": "100vh"}}>
   <Box as={`form`}>
-  <VStack sx={{"rowGap": "1em"}}>
+  <VStack sx={{"rowGap": "2em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
   {`📝 Contact me`}
 </Heading>
@@ -60,7 +60,7 @@ export default function Component() {
 </Button>
 </VStack>
 </Box>
-  <Box sx={{"justifyContent": "center"}}>
+  <Box>
   <Modal isOpen={modal_state.show}>
   <ModalOverlay>
   <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)"}}>

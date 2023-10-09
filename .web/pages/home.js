@@ -39,8 +39,8 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "marginBottom": "10%", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
-  <Box sx={{"backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "_hover": {"transform": "scale(1.05)", "transition": "0.5s"}}}>
+  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "5px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
+  <Box sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px", "_hover": {"transform": "scale(1.05)", "transition": "0.5s"}}}>
   <VStack sx={{"margin": "2em"}}>
   <Image src={`/pic.jpg`} sx={{"width": ["250px", "350px", "350px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
   <Heading sx={{"fontFamily": "monospace", "fontSize": ["1.8em", "2.5em", "3em"], "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
@@ -51,7 +51,7 @@ export default function Component() {
 </Text>
 </VStack>
 </Box>
-  <Center sx={{"justifyContent": "space-evenly", "fontSize": ["1.3em", "1.8em", "1.8em", "1.8em", "2.3em"], "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "minHeight": "300px", "userSelect": "none"}}>
+  <Center sx={{"justifyContent": "space-evenly", "fontSize": ["1.3em", "1.8em", "1.8em", "2em", "2.3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "minHeight": "350px", "userSelect": "none"}}>
   <List spacing={`1em`} sx={{"margin": "1em"}}>
   <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
   {`💻 Programming Skills`}

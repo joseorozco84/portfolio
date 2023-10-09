@@ -23,8 +23,8 @@ def info():
             margin="3%",
         ),
         padding="1em",
-        background_color="rgb(1, 1, 1, 0.15)",
+        # background_color="rgb(20, 20, 20, 0.5)",
         backdrop_filter="blur(5px)",
-        border_radius="1em",
+        border_radius="10px",
         user_select="none",
     )

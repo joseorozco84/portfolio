@@ -39,8 +39,8 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["25%", "25%", "20%", "15%", "10%"], "marginBottom": "10%", "borderRadius": "1em", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
-  <VStack sx={{"padding": "1em", "backgroundColor": "rgb(1, 1, 1, 0.15)", "backdropFilter": "blur(5px)", "borderRadius": "1em", "userSelect": "none"}}>
+  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "800px"}}>
+  <VStack sx={{"padding": "1em", "backdropFilter": "blur(5px)", "borderRadius": "10px", "userSelect": "none"}}>
   <Heading sx={{"fontFamily": "monospace", "userSelect": "none", "textColor": "rgb(255, 255, 255)", "margin": "3%", "marginBottom": "0", "fontSize": "2.5em"}}>
   {`About me`}
 </Heading>
