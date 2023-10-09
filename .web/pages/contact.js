@@ -35,9 +35,9 @@ export default function Component() {
     }
   }, [router])
 
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
 
   return (
   <Fragment><Fragment>
@@ -83,7 +83,7 @@ export default function Component() {
 </Box>
 </Box>
   <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
-  <HStack>
+  <HStack sx={{"gap": "2em"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>
   <Image src={`/github.png`} sx={{"width": "48px"}}/>

@@ -39,7 +39,7 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "5px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
+  <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px", "_hover": {"transform": "scale(1.05)", "transition": "0.5s"}}}>
   <VStack sx={{"margin": "2em"}}>
   <Image src={`/pic.jpg`} sx={{"width": ["250px", "350px", "350px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>

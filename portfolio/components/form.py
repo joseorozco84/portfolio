@@ -141,6 +141,7 @@ def social():
                 href="https://www.linkedin.com/in/jose-orozco-79367143/",
                 is_external=True,
             ),
+            gap="2em",
         ),
         justify_content="center",
         # max_height="100vh",
