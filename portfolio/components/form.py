@@ -13,7 +13,7 @@ def form():
             rx.form(
                 rx.vstack(
                     rx.heading(
-                        "📝 Contact me",
+                        "Contact me",
                         user_select="none",
                         text_color="rgb(255, 255, 255)",
                         font_size=["1.5em","1.8em", "1.8em", "1.8em", "2em"],
@@ -51,7 +51,8 @@ def form():
                         rx.icon(
                             tag="email",
                         ),
-                        color_scheme="green",
+                        bg_color="#2b6cb0",
+                        text_color="white",
                         font_family="monospace",
                         size="lg",
                         column_gap="5px",
@@ -105,7 +106,7 @@ def social():
             rx.link(
                 rx.vstack(
                     rx.image(
-                        src="/github.png",
+                        src="/github_white.png",
                         width="48px"
                     ),
                     rx.text("GitHub"),
@@ -125,7 +126,7 @@ def social():
             rx.link(
                 rx.vstack(
                     rx.image(
-                        src="/linkedin.png",
+                        src="/linkedin_white.png",
                         width="48px"
                     ),
                     rx.text("Linkedin"),

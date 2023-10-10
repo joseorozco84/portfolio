@@ -35,9 +35,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
   <Fragment><Fragment>
@@ -50,12 +50,12 @@ export default function Component() {
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
-  {`📝 Contact me`}
+  {`Contact me`}
 </Heading>
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "maxHeight": "200px"}}/>
-  <Button colorScheme={`green`} onClick={_e => Event([E("modal_state.change", {})], _e)} size={`lg`} sx={{"fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
+  <Button onClick={_e => Event([E("modal_state.change", {})], _e)} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
   {`Send`}
   <EmailIcon/>
 </Button>
@@ -86,7 +86,7 @@ export default function Component() {
   <HStack sx={{"gap": "2em"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>
-  <Image src={`/github.png`} sx={{"width": "48px"}}/>
+  <Image src={`/github_white.png`} sx={{"width": "48px"}}/>
   <Text>
   {`GitHub`}
 </Text>
@@ -94,7 +94,7 @@ export default function Component() {
 </Link>
   <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
   <VStack sx={{"bgColor": "rgb(30, 63, 100, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(30, 63, 100, 0.95)"}}}>
-  <Image src={`/linkedin.png`} sx={{"width": "48px"}}/>
+  <Image src={`/linkedin_white.png`} sx={{"width": "48px"}}/>
   <Text>
   {`Linkedin`}
 </Text>

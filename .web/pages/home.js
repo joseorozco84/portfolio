@@ -46,26 +46,26 @@ export default function Component() {
   <Heading sx={{"fontFamily": "monospace", "fontSize": ["1.8em", "2.5em", "3em"], "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
   {`Hi! I'm Jose`}
 </Heading>
-  <Text sx={{"textColor": "green", "fontSize": ["1.5em", "1.8em", "2em"], "userSelect": "none"}}>
+  <Text sx={{"textColor": "#2b6cb0", "fontSize": ["1.5em", "1.8em", "2em"], "userSelect": "none"}}>
   {`jr.developer`}
 </Text>
 </VStack>
 </Box>
   <Center sx={{"justifyContent": "space-evenly", "fontWeight": "bold", "fontSize": ["1.5em", "2em", "2em", "2em", "2.5em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "minHeight": "350px", "userSelect": "none"}}>
   <List spacing={`1em`} sx={{"margin": "1em"}}>
-  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
+  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "#2b6cb0"}}}>
   {`💻 Programming Skills`}
 </ListItem>
-  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
+  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "#2b6cb0"}}}>
   {`🧩 Problem-Solving`}
 </ListItem>
-  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
+  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "#2b6cb0"}}}>
   {`🤝 Team Collaboration`}
 </ListItem>
-  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
+  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "#2b6cb0"}}}>
   {`📂 Project Management`}
 </ListItem>
-  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "darkgreen"}}}>
+  <ListItem sx={{"_hover": {"transform": "scale(1.1)", "transition": "0.5s", "color": "#2b6cb0"}}}>
   {`🌟 Adaptability`}
 </ListItem>
 </List>

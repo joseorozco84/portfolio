@@ -8,7 +8,7 @@ def skills():
                 _hover={
                     "transform": "scale(1.1)",
                     "transition": "0.5s",
-                    "color":"darkgreen",
+                    "color":"#2b6cb0",
                     },
                 ),
             rx.list_item(
@@ -16,7 +16,7 @@ def skills():
                 _hover={
                     "transform": "scale(1.1)",
                     "transition": "0.5s",
-                    "color":"darkgreen",
+                    "color":"#2b6cb0",
                     },
                 ),
             rx.list_item(
@@ -24,7 +24,7 @@ def skills():
                 _hover={
                     "transform": "scale(1.1)",
                     "transition": "0.5s",
-                    "color":"darkgreen",
+                    "color":"#2b6cb0",
                     },
                 )
                 ,
@@ -33,7 +33,7 @@ def skills():
                 _hover={
                     "transform": "scale(1.1)",
                     "transition": "0.5s",
-                    "color":"darkgreen",
+                    "color":"#2b6cb0",
                     },
                 ),
             rx.list_item(
@@ -41,7 +41,7 @@ def skills():
                 _hover={
                     "transform": "scale(1.1)",
                     "transition": "0.5s",
-                    "color":"darkgreen",
+                    "color":"#2b6cb0",
                     },
                 ),
             margin="1em",

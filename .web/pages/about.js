@@ -41,19 +41,19 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <Box sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px"}}>
-  <Tabs isFitted={true} sx={{"color": "darkgray", "userSelect": "none", "colorScheme": "blue"}}>
-  <TabList sx={{"borderBottom": "none", "paddingLeft": "25px", "paddingRight": "25px", "tabsColor": "white"}}>
-  <Tab sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px 10px 0px 0px", "fontSize": "16px", "fontWeight": "bold"}}>
+  <Tabs isFitted={true} sx={{"color": "darkgray", "userSelect": "none"}}>
+  <TabList sx={{"borderBottom": "none", "paddingLeft": "25px", "paddingRight": "25px"}}>
+  <Tab sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px 10px 0px 0px", "fontSize": ["14px", "24px"], "fontWeight": "bold"}}>
   {`About me`}
 </Tab>
-  <Tab sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px 10px 0px 0px", "fontSize": "16px", "fontWeight": "bold"}}>
+  <Tab sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px 10px 0px 0px", "fontSize": ["14px", "24px"], "fontWeight": "bold"}}>
   {`About page`}
 </Tab>
 </TabList>
   <TabPanels>
-  <TabPanel sx={{"paddingTop": "2px"}}>
+  <TabPanel sx={{"paddingTop": "2px", "padding": "0px"}}>
   <Box sx={{"padding": "1em", "backdropFilter": "blur(5px)", "borderRadius": "10px", "userSelect": "none"}}>
-  <Text sx={{"textColor": "white", "fontSize": "18px", "fontFamily": "monospace"}}>
+  <Text sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
   {`Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.
             I am an enthusiastic self-learner who is motivated by technological challenges and quickly acquires new skills and technologies.
@@ -62,9 +62,9 @@ export default function Component() {
 </Text>
 </Box>
 </TabPanel>
-  <TabPanel sx={{"paddingTop": "2px"}}>
+  <TabPanel sx={{"paddingTop": "2px", "padding": "0px"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px", "userSelect": "none", "padding": "1em", "height": "fit-content"}}>
-  <Text sx={{"textColor": "white", "fontSize": "18px", "fontFamily": "monospace"}}>
+  <Text sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
   {`Welcome to my portfolio! Built with `}
   <Link as={NextLink} href={`https://www.python.org/`} isExternal={true} sx={{"color": "rgb(121,246,99)"}}>
   {`Python`}

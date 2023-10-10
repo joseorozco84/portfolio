@@ -11,7 +11,7 @@ def navbar():
                         ".home",
                         href="/home",
                         font_weight="bold",
-                        _hover={"color":"green"},
+                        _hover={"color":"#2b6cb0"},
                         user_select="none",
                     ),
                 ),
@@ -22,7 +22,7 @@ def navbar():
                     rx.link(
                         ".portfolio",
                         href="/portfolio",
-                        _hover={"color":"green"},
+                        _hover={"color":"#2b6cb0"},
                         font_weight="bold",
                         user_select="none",
                     ),
@@ -32,7 +32,7 @@ def navbar():
                     rx.link(
                         ".about",
                         href="/about",
-                        _hover={"color":"green"},
+                        _hover={"color":"#2b6cb0"},
                         font_weight="bold",
                         user_select="none",
                     ),
@@ -83,7 +83,7 @@ def menu():
             ),
             _hover={
                 "transition": "0.25s",
-                "text_color": "green",
+                "text_color": "#2b6cb0",
             },
         ),
         rx.menu_list(
@@ -91,22 +91,23 @@ def menu():
                 rx.menu_item(
                         rx.hstack(
                             rx.image(
-                                src="/email.png",
+                                src="/email_white.png",
                                 width="32px"
                             ),
                             rx.text(
                                 "Contact me",
                                 font_weight="bold",
-                                font_size="24px",
+                                font_size="20px",
                             ),
                         ),
                     text_color="gray",
                     justify_content="left",
                     _hover={
                         # "transition": "0.25s",
-                        "bg_color": "#38a169",
+                        "bg_color": "#2b6cb0",
                         "text_color": "white",
                     },
+                    bg_color="inherit",
                 ),
                 href="/contact",
             ),
@@ -115,22 +116,22 @@ def menu():
                 rx.menu_item(
                     rx.hstack(
                         rx.image(
-                            src="/github.png",
+                            src="/github_white.png",
                             width="32px"
                         ),
                         rx.text(
                             "GitHub",
                             font_weight="bold",
-                            font_size="24px",
+                            font_size="20px",
                         ),
                     ),
                     text_color="gray",
                     justify_content="left",
                     _hover={
-                        # "transition": "0.25s",
-                        "bg_color": "#38a169",
+                        "bg_color": "#2b6cb0",
                         "text_color": "white",
                     },
+                    bg_color="inherit",
                 ),
                 href="https://github.com/joseorozco84",
                 is_external=True,
@@ -139,27 +140,29 @@ def menu():
                 rx.menu_item(
                     rx.hstack(
                         rx.image(
-                            src="/linkedin.png",
+                            src="/linkedin_white.png",
                             width="32px"
                         ),
                         rx.text(
                             "LinkedIn",
                             font_weight="bold",
-                            font_size="24px",
+                            font_size="20px",
                         ),
                     ),
                     text_color="gray",
                     justify_content="left",
                     _hover={
-                        # "transition": "0.25s",
-                        "bg_color": "#38a169",
+                        "bg_color": "#2b6cb0",
                         "text_color": "white",
                     },
+                    bg_color="inherit",
                 ),
                 href="https://www.linkedin.com/in/jose-orozco-79367143/",
                 is_external=True,
+
             ),
+            background="rgb(1, 1, 1, 0.9)",
+            backdrop_filter="blur(5px)",
         ),
-            text_color="black",
-            border="hidden",
+        border="hidden",
     )

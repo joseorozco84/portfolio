@@ -10,7 +10,7 @@ export const Navbar = memo(({}) => (
   <Flex sx={{"width": "100%", "maxWidth": "1200px", "minWidth": "50%", "minHeight": "6vh", "padding": "0.5em", "textColor": "white", "fontSize": ["0.8em", "1.8em", "2em", "2em"], "alignItems": "center", "justifyContent": "space-evenly", "overflow": "hidden"}}>
   <Flex>
   <Container>
-  <Link as={NextLink} href={`/home`} sx={{"fontWeight": "bold", "_hover": {"color": "green"}, "userSelect": "none"}}>
+  <Link as={NextLink} href={`/home`} sx={{"fontWeight": "bold", "_hover": {"color": "#2b6cb0"}, "userSelect": "none"}}>
   {`.home`}
 </Link>
 </Container>
@@ -18,30 +18,30 @@ export const Navbar = memo(({}) => (
   <Spacer/>
   <Flex sx={{"justifyContent": "space-between", "alignItems": "center"}}>
   <Container>
-  <Link as={NextLink} href={`/portfolio`} sx={{"_hover": {"color": "green"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/portfolio`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.portfolio`}
 </Link>
 </Container>
   <Spacer/>
   <Container>
-  <Link as={NextLink} href={`/about`} sx={{"_hover": {"color": "green"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/about`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.about`}
 </Link>
 </Container>
   <Spacer/>
   <Container>
-  <Menu sx={{"textColor": "black", "border": "hidden"}}>
-  <MenuButton sx={{"_hover": {"transition": "0.25s", "textColor": "green"}}}>
+  <Menu sx={{"border": "hidden"}}>
+  <MenuButton sx={{"_hover": {"transition": "0.25s", "textColor": "#2b6cb0"}}}>
   <Text sx={{"fontWeight": "bold", "userSelect": "none"}}>
   {`.contact`}
 </Text>
 </MenuButton>
-  <MenuList>
+  <MenuList sx={{"background": "rgb(1, 1, 1, 0.9)", "backdropFilter": "blur(5px)"}}>
   <Link as={NextLink} href={`/contact`}>
-  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
-  <Image src={`/email.png`} sx={{"width": "32px"}}/>
-  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  <Image src={`/email_white.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "20px"}}>
   {`Contact me`}
 </Text>
 </HStack>
@@ -49,20 +49,20 @@ export const Navbar = memo(({}) => (
 </Link>
   <MenuDivider/>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
-  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
-  <Image src={`/github.png`} sx={{"width": "32px"}}/>
-  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  <Image src={`/github_white.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "20px"}}>
   {`GitHub`}
 </Text>
 </HStack>
 </MenuItem>
 </Link>
   <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
-  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
-  <Image src={`/linkedin.png`} sx={{"width": "32px"}}/>
-  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  <Image src={`/linkedin_white.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "20px"}}>
   {`LinkedIn`}
 </Text>
 </HStack>

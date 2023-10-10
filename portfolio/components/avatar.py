@@ -22,7 +22,7 @@ def avatar():
                 ),
             rx.text(
                 "jr.developer",
-                text_color="green",
+                text_color="#2b6cb0",
                 font_size=["1.5em","1.8em","2em"],
                 user_select="none",
                 ),
