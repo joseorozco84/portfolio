@@ -42,7 +42,7 @@ export default function Component() {
   <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "borderRadius": "10px", "_hover": {"transform": "scale(1.05)", "transition": "0.5s"}}}>
   <VStack sx={{"margin": "2em"}}>
-  <Image src={`/pic.jpg`} sx={{"width": ["250px", "350px", "350px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
+  <Image src={`/pic.jpg`} sx={{"width": ["250px", "300px", "300px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
   <Heading sx={{"fontFamily": "monospace", "fontSize": ["1.8em", "2.5em", "3em"], "borderRadius": "0.3em", "textColor": "white", "textShadow": "0px 0px 10px black", "userSelect": "none"}}>
   {`Hi! I'm Jose`}
 </Heading>

@@ -5,7 +5,7 @@ def avatar():
         rx.vstack(
             rx.image(
                 src="/pic.jpg",
-                width=["250px","350px","350px"],
+                width=["250px","300px","300px"],
                 size="xxl",
                 border_radius="1em",            
                 user_select="none",

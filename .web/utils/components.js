@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { E, isTrue } from "/utils/state"
-import { Container, Flex, Link, Spacer } from "@chakra-ui/react"
+import { Container, Flex, HStack, Image, Link, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Spacer, Text } from "@chakra-ui/react"
 import NextLink from "next/link"
 
 
@@ -30,9 +30,46 @@ export const Navbar = memo(({}) => (
 </Container>
   <Spacer/>
   <Container>
-  <Link as={NextLink} href={`/contact`} sx={{"_hover": {"color": "green"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Menu sx={{"textColor": "black", "border": "hidden"}}>
+  <MenuButton sx={{"_hover": {"transition": "0.25s", "textColor": "green"}}}>
+  <Text sx={{"fontWeight": "bold", "userSelect": "none"}}>
   {`.contact`}
+</Text>
+</MenuButton>
+  <MenuList>
+  <Link as={NextLink} href={`/contact`}>
+  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <HStack>
+  <Image src={`/email.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  {`Contact me`}
+</Text>
+</HStack>
+</MenuItem>
 </Link>
+  <MenuDivider/>
+  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
+  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <HStack>
+  <Image src={`/github.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  {`GitHub`}
+</Text>
+</HStack>
+</MenuItem>
+</Link>
+  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
+  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <HStack>
+  <Image src={`/linkedin.png`} sx={{"width": "32px"}}/>
+  <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
+  {`LinkedIn`}
+</Text>
+</HStack>
+</MenuItem>
+</Link>
+</MenuList>
+</Menu>
 </Container>
 </Flex>
 </Flex>

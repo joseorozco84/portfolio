@@ -35,8 +35,8 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
 
   return (
@@ -44,7 +44,7 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "800px", "gap": "20px"}}>
+  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": "90%", "maxWidth": "800px", "gap": "20px"}}>
   <Box>
   <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <Box as={`form`}>
