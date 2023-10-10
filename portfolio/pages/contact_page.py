@@ -6,7 +6,7 @@ def contact():
         form.form(),
         form.social(),
         # columns=[1,1,1,2,2],
-        margin_top=["15%","15%","10%","10%","10%"],
+        margin_top=["20%","20%","10%","10%","10%"],
         margin_bottom="10%",
         border_radius="10px",
         width="90%",

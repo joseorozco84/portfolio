@@ -17,7 +17,6 @@ def avatar():
                 font_size=["1.8em","2.5em","3em"],
                 border_radius="0.3em",
                 text_color="white",
-                text_shadow="0px 0px 10px black",
                 user_select="none",
                 ),
             rx.text(
@@ -27,12 +26,13 @@ def avatar():
                 user_select="none",
                 ),
             margin="2em",
-            ),        
-        # background_color="rgb(20, 20, 20, 0.5)",
+            ),
+        background_color="rgb(20, 20, 20, 0.5)",
+        box_shadow="rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
         backdrop_filter="blur(5px)",
         border_radius="10px",
-        _hover={
-            "transform": "scale(1.05)",
-            "transition": "0.5s",
-            },
+        # _hover={
+        #     "transform": "scale(1.05)",
+        #     "transition": "0.5s",
+        #     },
         )

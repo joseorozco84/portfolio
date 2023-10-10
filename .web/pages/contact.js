@@ -35,18 +35,18 @@ export default function Component() {
     }
   }, [router])
 
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
   <Fragment><Fragment>
-  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "/code_des.jpg", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
+  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(315deg, #152526 0.75%, #4d78b9 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["15%", "15%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": "90%", "maxWidth": "800px", "gap": "20px"}}>
+  <SimpleGrid sx={{"marginTop": ["20%", "20%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": "90%", "maxWidth": "800px", "gap": "20px"}}>
   <Box>
-  <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
+  <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
@@ -64,7 +64,7 @@ export default function Component() {
   <Box>
   <Modal isCentered={true} isOpen={modal_state.show}>
   <ModalOverlay sx={{"userSelect": "none"}}>
-  <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)"}}>
+  <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px"}}>
   <ModalHeader>
   {`Confirm`}
 </ModalHeader>
@@ -82,7 +82,7 @@ export default function Component() {
 </Box>
 </Box>
 </Box>
-  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
   <HStack sx={{"gap": "2em"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>

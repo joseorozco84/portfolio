@@ -16,6 +16,8 @@ def info():
         ),
         padding="1em",
         backdrop_filter="blur(5px)",
+        background_color="rgb(20, 20, 20, 0.5)",
+        box_shadow="rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
         border_radius="10px",
         user_select="none",
     )
@@ -35,6 +37,8 @@ def page():
             margin="3%",
         ),
         backdrop_filter="blur(5px)",
+        background_color="rgb(20, 20, 20, 0.5)",
+        box_shadow="rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
         border_radius="10px",
         user_select="none",
         padding="1em",
