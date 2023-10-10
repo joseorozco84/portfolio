@@ -38,7 +38,7 @@ export const Navbar = memo(({}) => (
 </MenuButton>
   <MenuList>
   <Link as={NextLink} href={`/contact`}>
-  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
   <HStack>
   <Image src={`/email.png`} sx={{"width": "32px"}}/>
   <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
@@ -49,7 +49,7 @@ export const Navbar = memo(({}) => (
 </Link>
   <MenuDivider/>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
-  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
   <HStack>
   <Image src={`/github.png`} sx={{"width": "32px"}}/>
   <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>
@@ -59,7 +59,7 @@ export const Navbar = memo(({}) => (
 </MenuItem>
 </Link>
   <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
-  <MenuItem sx={{"textColor": "black", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
+  <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#38a169", "textColor": "white"}}}>
   <HStack>
   <Image src={`/linkedin.png`} sx={{"width": "32px"}}/>
   <Text sx={{"fontWeight": "bold", "fontSize": "24px"}}>

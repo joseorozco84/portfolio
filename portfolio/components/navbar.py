@@ -100,7 +100,7 @@ def menu():
                                 font_size="24px",
                             ),
                         ),
-                    text_color="black",
+                    text_color="gray",
                     justify_content="left",
                     _hover={
                         # "transition": "0.25s",
@@ -124,7 +124,7 @@ def menu():
                             font_size="24px",
                         ),
                     ),
-                    text_color="black",
+                    text_color="gray",
                     justify_content="left",
                     _hover={
                         # "transition": "0.25s",
@@ -148,7 +148,7 @@ def menu():
                             font_size="24px",
                         ),
                     ),
-                    text_color="black",
+                    text_color="gray",
                     justify_content="left",
                     _hover={
                         # "transition": "0.25s",
