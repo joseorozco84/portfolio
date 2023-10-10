@@ -17,6 +17,7 @@ def form():
                         user_select="none",
                         text_color="rgb(255, 255, 255)",
                         font_size=["1.5em","1.8em", "1.8em", "1.8em", "2em"],
+                        font_family="monospace",
                     ),
                     rx.input(
                         placeholder="Name...",
@@ -146,10 +147,8 @@ def social():
             gap="2em",
         ),
         justify_content="center",
-        # max_height="100vh",
         max_width="800px",
         padding=["2em","2em","3em","3em"],
-        # background_color="rgb(20, 20, 20, 0.5)",
         backdrop_filter="blur(5px)",
         border_radius="10px",
         place_self="center",

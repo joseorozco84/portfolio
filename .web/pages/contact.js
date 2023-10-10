@@ -36,8 +36,8 @@ export default function Component() {
   }, [router])
 
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
   <Fragment><Fragment>
@@ -49,7 +49,7 @@ export default function Component() {
   <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
-  <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"]}}>
+  <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}
 </Heading>
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
