@@ -1,8 +1,12 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
+from typing import Any
 from rxconfig import config
 import reflex as rx
 from .components import navbar
+from .components.color_picker import ColorPicker, color_index
 from .pages	import home_page, about_page, contact_page, portfolio_page
+from .components.classes import ParentComponent
+from reflex.style import Style
 
 
 # home page
@@ -20,9 +24,9 @@ def home() -> rx.Component:
         background_position="center",
         background_repeat="no-repeat",
         background_size="cover",
-        
     )
 
+# portfolio page
 def portfolio() -> rx.Component:
     return rx.box(
         rx.vstack(
@@ -76,10 +80,17 @@ def contact() -> rx.Component:
         
     )
 
+def color() -> rx.Component:
+    return rx.box(
+        # color_index(),
+    )
+
+
 style = {
     "font_family": "monospace",
     "text_color": "white",
 }
+
 
 # Add state and page to the app.
 app = rx.App(style=style)
@@ -87,4 +98,5 @@ app.add_page(home)
 app.add_page(portfolio)
 app.add_page(about)
 app.add_page(contact)
+app.add_page(color)
 app.compile()

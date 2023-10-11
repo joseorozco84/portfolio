@@ -9,7 +9,7 @@ import NextHead from "next/head"
 
 
 export default function Component() {
-  const modal_state = useContext(StateContext)
+  const parent_state = useContext(StateContext)
   const router = useRouter()
   const { colorMode, toggleColorMode } = useColorMode()
   const focusRef = useRef();
@@ -26,7 +26,7 @@ export default function Component() {
 
   // Route after the initial page hydration.
   useEffect(() => {
-    const change_complete = () => Event([E('modal_state.hydrate', {})])
+    const change_complete = () => Event([E('parent_state.hydrate', {})])
     router.events.on('routeChangeComplete', change_complete)
     return () => {
       router.events.off('routeChangeComplete', change_complete)

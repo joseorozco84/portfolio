@@ -11,7 +11,7 @@ import NextHead from "next/head"
 
 
 export default function Component() {
-  const modal_state = useContext(StateContext)
+  const parent_state = useContext(StateContext)
   const router = useRouter()
   const { colorMode, toggleColorMode } = useColorMode()
   const focusRef = useRef();
@@ -28,16 +28,16 @@ export default function Component() {
 
   // Route after the initial page hydration.
   useEffect(() => {
-    const change_complete = () => Event([E('modal_state.hydrate', {})])
+    const change_complete = () => Event([E('parent_state.hydrate', {})])
     router.events.on('routeChangeComplete', change_complete)
     return () => {
       router.events.off('routeChangeComplete', change_complete)
     }
   }, [router])
 
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
 
   return (
   <Fragment><Fragment>
@@ -55,14 +55,14 @@ export default function Component() {
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "maxHeight": "200px"}}/>
-  <Button onClick={_e => Event([E("modal_state.change", {})], _e)} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
+  <Button onClick={_e => Event([E("parent_state.modal_state.change", {})], _e)} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
   {`Send`}
   <EmailIcon/>
 </Button>
 </VStack>
 </Box>
   <Box>
-  <Modal isCentered={true} isOpen={modal_state.show}>
+  <Modal isCentered={true} isOpen={parent_state.modal_state.show}>
   <ModalOverlay sx={{"userSelect": "none"}}>
   <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px"}}>
   <ModalHeader>
@@ -72,7 +72,7 @@ export default function Component() {
   {`Your message has been sent!`}
 </ModalBody>
   <ModalFooter>
-  <Button colorScheme={`green`} onClick={_e => Event([E("modal_state.change", {})], _e)}>
+  <Button onClick={_e => Event([E("parent_state.modal_state.change", {})], _e)} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
   {`Close`}
 </Button>
 </ModalFooter>

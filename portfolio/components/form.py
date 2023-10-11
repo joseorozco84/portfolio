@@ -1,11 +1,11 @@
 import reflex as rx
+from .classes import ModalState
 
+# class ModalState(rx.State):
+#     show: bool = False
 
-class ModalState(rx.State):
-    show: bool = False
-
-    def change(self):
-        self.show = not (self.show)
+#     def change(self):
+#         self.show = not (self.show)
 
 def form():
     return rx.box(
@@ -77,7 +77,8 @@ def form():
                             rx.modal_footer(
                                 rx.button(
                                     "Close", on_click=ModalState.change,
-                                    color_scheme="green",
+                                    bg_color="#2b6cb0",
+                                    text_color="white",
                                 )
                             ),
                             text_color="black",
