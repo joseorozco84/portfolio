@@ -36,13 +36,13 @@ export default function Component() {
 
   return (
   <Fragment><Fragment>
-  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(315deg, #152526 0.75%, #4d78b9 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
+  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
   <SimpleGrid columns={[1, 1, 1, 2, 2]} sx={{"marginTop": ["20%", "20%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": ["90%", "90%", "80%"], "maxWidth": "1200px", "gap": "20px"}}>
   <Box sx={{"backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <VStack sx={{"margin": "2em"}}>
-  <Image src={`/pic.jpg`} sx={{"width": ["250px", "300px", "300px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em"}}/>
+  <Image src={`/pic.jpg`} sx={{"width": ["250px", "300px", "300px"], "size": "xxl", "borderRadius": "1em", "userSelect": "none", "margin": "1em", "filter": "saturate(20%)", "_hover": {"filter": "saturate(100%)", "transition": "0.5s"}}}/>
   <Heading sx={{"fontFamily": "monospace", "fontSize": ["1.8em", "2.5em", "3em"], "borderRadius": "0.3em", "textColor": "white", "userSelect": "none"}}>
   {`Hi! I'm Jose`}
 </Heading>

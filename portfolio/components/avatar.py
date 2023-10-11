@@ -10,6 +10,11 @@ def avatar():
                 border_radius="1em",            
                 user_select="none",
                 margin="1em",
+                filter="saturate(20%)",
+                _hover={
+                    "filter": "saturate(100%)",
+                    "transition": "0.5s",
+                }
                 ),
             rx.heading(
                 "Hi! I'm Jose",
