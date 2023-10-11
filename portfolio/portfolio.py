@@ -3,7 +3,7 @@ from typing import Any
 from rxconfig import config
 import reflex as rx
 from .components import navbar
-from .components.color_picker import ColorPicker, color_index
+from .components.color_picker import color_index
 from .pages	import home_page, about_page, contact_page, portfolio_page
 from .components.classes import ParentComponent
 from reflex.style import Style
