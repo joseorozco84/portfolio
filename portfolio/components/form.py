@@ -1,11 +1,6 @@
 import reflex as rx
 from .classes import ModalState
 
-# class ModalState(rx.State):
-#     show: bool = False
-
-#     def change(self):
-#         self.show = not (self.show)
 
 def form():
     return rx.box(

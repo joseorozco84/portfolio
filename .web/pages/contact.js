@@ -1,13 +1,14 @@
 import { Fragment, useContext, useEffect, useRef, useState } from "react"
 import { useRouter } from "next/router"
-import { E, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, set_val, uploadFiles, useEventLoop } from "/utils/state"
-import { EventLoopContext, StateContext } from "/utils/context.js"
+import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, set_val, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
+import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
 import { Box, Button, Heading, HStack, Image, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import { EmailIcon } from "@chakra-ui/icons"
 import NextLink from "next/link"
 import NextHead from "next/head"
+
 
 
 export default function Component() {
@@ -17,7 +18,7 @@ export default function Component() {
   const focusRef = useRef();
   
   // Main event loop.
-  const [Event, notConnected] = useContext(EventLoopContext)
+  const [addEvents, connectError] = useContext(EventLoopContext)
 
   // Set focus to the specified element.
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Component() {
 
   // Route after the initial page hydration.
   useEffect(() => {
-    const change_complete = () => Event([E('parent_state.hydrate', {})])
+    const change_complete = () => addEvents(initialEvents.map((e) => ({...e})))
     router.events.on('routeChangeComplete', change_complete)
     return () => {
       router.events.off('routeChangeComplete', change_complete)
@@ -40,11 +41,37 @@ export default function Component() {
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
-  <Fragment><Fragment>
+    <Fragment>
+  <Fragment>
+  {isTrue(connectError !== null) ? (
+  <Fragment>
+  <Modal isOpen={connectError !== null}>
+  <ModalOverlay>
+  <ModalContent>
+  <ModalHeader>
+  {`Connection Error`}
+</ModalHeader>
+  <ModalBody>
+  <Text>
+  {`Cannot connect to server: `}
+  {(connectError !== null) ? connectError.message : ''}
+  {`. Check if server is reachable at `}
+  {`http://localhost:8000`}
+</Text>
+</ModalBody>
+</ModalContent>
+</ModalOverlay>
+</Modal>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <SimpleGrid sx={{"marginTop": ["20%", "20%", "10%", "10%", "10%"], "marginBottom": "10%", "borderRadius": "10px", "width": "90%", "maxWidth": "800px", "gap": "20px"}}>
+  <Box sx={{"width": "90%", "maxWidth": "800px"}}>
+  <SimpleGrid sx={{"marginTop": "80px", "marginBottom": "10%", "gap": "20px"}}>
   <Box>
   <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
   <Box as={`form`}>
@@ -55,7 +82,7 @@ export default function Component() {
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
   <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "maxHeight": "200px"}}/>
-  <Button onClick={_e => Event([E("parent_state.modal_state.change", {})], _e)} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
+  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
   {`Send`}
   <EmailIcon/>
 </Button>
@@ -72,7 +99,7 @@ export default function Component() {
   {`Your message has been sent!`}
 </ModalBody>
   <ModalFooter>
-  <Button onClick={_e => Event([E("parent_state.modal_state.change", {})], _e)} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
+  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
   {`Close`}
 </Button>
 </ModalFooter>
@@ -103,16 +130,16 @@ export default function Component() {
 </HStack>
 </Box>
 </SimpleGrid>
+</Box>
 </VStack>
 </Box>
   <NextHead>
   <title>
-  {`Reflex App`}
+  {`Portfolio -> Contact`}
 </title>
   <meta content={`A Reflex app.`} name={`description`}/>
   <meta content={`favicon.ico`} property={`og:image`}/>
 </NextHead>
 </Fragment>
-    </Fragment>
   )
 }

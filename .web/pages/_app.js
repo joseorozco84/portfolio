@@ -1,10 +1,10 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Global, css } from "@emotion/react";
 import theme from "/utils/theme";
-import { initialEvents, initialState, StateContext, EventLoopContext } from "/utils/context.js";
-import { useEventLoop } from "utils/state";
+import { clientStorage, initialEvents, initialState, StateContext, EventLoopContext } from "/utils/context.js";
+import { useEventLoop } from "/utils/state";
 
-import '../styles/tailwind.css'
+import '/styles/styles.css'
 
 const GlobalStyles = css`
   /* Hide the blue border around Chakra components. */
@@ -15,12 +15,13 @@ const GlobalStyles = css`
 `;
 
 function EventLoopProvider({ children }) {
-  const [state, Event, notConnected] = useEventLoop(
+  const [state, addEvents, connectError] = useEventLoop(
     initialState,
     initialEvents,
+    clientStorage,
   )
   return (
-    <EventLoopContext.Provider value={[Event, notConnected]}>
+    <EventLoopContext.Provider value={[addEvents, connectError]}>
       <StateContext.Provider value={state}>
         {children}
       </StateContext.Provider>

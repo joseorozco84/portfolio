@@ -9,9 +9,8 @@ import Router, { useRouter } from "next/router";
 
 
 // Endpoint URLs.
-const PINGURL = env.pingUrl
-const EVENTURL = env.eventUrl
-const UPLOADURL = env.uploadUrl
+const EVENTURL = env.EVENT
+const UPLOADURL = env.UPLOAD
 
 // Global variable to hold the token.
 let token;
@@ -74,7 +73,7 @@ export const getToken = () => {
  * @param delta The delta to apply.
  */
 export const applyDelta = (state, delta) => {
-  const new_state = {...state}
+  const new_state = { ...state }
   for (const substate in delta) {
     let s = new_state;
     const path = substate.split(".").slice(1);
@@ -115,7 +114,10 @@ export const getAllLocalStorageItems = () => {
 export const applyEvent = async (event, socket) => {
   // Handle special events
   if (event.name == "_redirect") {
-    Router.push(event.payload.path);
+    if (event.payload.external)
+      window.open(event.payload.path, "_blank");
+    else
+      Router.push(event.payload.path);
     return false;
   }
 
@@ -125,12 +127,12 @@ export const applyEvent = async (event, socket) => {
   }
 
   if (event.name == "_set_cookie") {
-    cookies.set(event.payload.key, event.payload.value);
+    cookies.set(event.payload.key, event.payload.value, { path: "/" });
     return false;
   }
 
   if (event.name == "_remove_cookie") {
-    cookies.remove(event.payload.key, event.payload.options)
+    cookies.remove(event.payload.key, { path: "/", ...event.payload.options })
     return false;
   }
 
@@ -154,6 +156,15 @@ export const applyEvent = async (event, socket) => {
     navigator.clipboard.writeText(content);
     return false;
   }
+  if (event.name == "_download") {
+    const a = document.createElement('a');
+    a.hidden = true;
+    a.href = event.payload.url;
+    a.download = event.payload.filename;
+    a.click();
+    a.remove();
+    return false;
+  }
 
   if (event.name == "_alert") {
     alert(event.payload.message);
@@ -174,10 +185,22 @@ export const applyEvent = async (event, socket) => {
     return false;
   }
 
-  // Send the event to the server.
-  event.token = getToken();
-  event.router_data = (({ pathname, query, asPath }) => ({ pathname, query, asPath }))(Router);
+  if (event.name == "_call_script") {
+    try {
+      eval(event.payload.javascript_code);
+    } catch (e) {
+      console.log("_call_script", e);
+    }
+    return false;
+  }
 
+  // Update token and router data (if missing).
+  event.token = getToken()
+  if (event.router_data === undefined || Object.keys(event.router_data).length === 0) {
+    event.router_data = (({ pathname, query, asPath }) => ({ pathname, query, asPath }))(Router)
+  }
+
+  // Send the event to the server.
   if (socket) {
     socket.emit("event", JSON.stringify(event));
     return true;
@@ -218,6 +241,11 @@ export const queueEvents = async (events, socket) => {
 export const processEvent = async (
   socket
 ) => {
+  // Only proceed if the socket is up, otherwise we throw the event into the void
+  if (!socket) {
+    return;
+  }
+
   // Only proceed if we're not already processing an event.
   if (event_queue.length === 0 || event_processing) {
     return;
@@ -250,15 +278,15 @@ export const processEvent = async (
  * @param socket The socket object to connect.
  * @param dispatch The function to queue state update
  * @param transports The transports to use.
- * @param setNotConnected The function to update connection state.
- * @param initial_events Array of events to seed the queue after connecting.
+ * @param setConnectError The function to update connection error value.
+ * @param client_storage The client storage object from context.js
  */
 export const connect = async (
   socket,
   dispatch,
   transports,
-  setNotConnected,
-  initial_events = [],
+  setConnectError,
+  client_storage = {},
 ) => {
   // Get backend URL object from the endpoint.
   const endpoint = new URL(EVENTURL);
@@ -271,18 +299,18 @@ export const connect = async (
 
   // Once the socket is open, hydrate the page.
   socket.current.on("connect", () => {
-    queueEvents(initial_events, socket)
-    setNotConnected(false)
+    setConnectError(null)
   });
 
   socket.current.on('connect_error', (error) => {
-    setNotConnected(true)
+    setConnectError(error)
   });
 
   // On each received message, queue the updates and events.
   socket.current.on("event", message => {
     const update = JSON5.parse(message)
     dispatch(update.delta)
+    applyClientStorageDelta(client_storage, update.delta)
     event_processing = !update.final
     if (update.events) {
       queueEvents(update.events, socket)
@@ -348,34 +376,111 @@ export const uploadFiles = async (handler, files) => {
  * @param handler The client handler to process event.
  * @returns The event object.
  */
-export const E = (name, payload = {}, handler = null) => {
+export const Event = (name, payload = {}, handler = null) => {
   return { name, payload, handler };
 };
 
 /**
+ * Package client-side storage values as payload to send to the
+ * backend with the hydrate event
+ * @param client_storage The client storage object from context.js
+ * @returns payload dict of client storage values
+ */
+export const hydrateClientStorage = (client_storage) => {
+  const client_storage_values = {
+    "cookies": {},
+    "local_storage": {}
+  }
+  if (client_storage.cookies) {
+    for (const state_key in client_storage.cookies) {
+      const cookie_options = client_storage.cookies[state_key]
+      const cookie_name = cookie_options.name || state_key
+      client_storage_values.cookies[state_key] = cookies.get(cookie_name)
+    }
+  }
+  if (client_storage.local_storage && (typeof window !== 'undefined')) {
+    for (const state_key in client_storage.local_storage) {
+      const options = client_storage.local_storage[state_key]
+      const local_storage_value = localStorage.getItem(options.name || state_key)
+      if (local_storage_value !== null) {
+        client_storage_values.local_storage[state_key] = local_storage_value
+      }
+    }
+  }
+  if (client_storage.cookies || client_storage.local_storage) {
+    return client_storage_values
+  }
+  return {}
+};
+
+/**
+ * Update client storage values based on backend state delta.
+ * @param client_storage The client storage object from context.js
+ * @param delta The state update from the backend
+ */
+const applyClientStorageDelta = (client_storage, delta) => {
+  // find the main state and check for is_hydrated
+  const unqualified_states = Object.keys(delta).filter((key) => key.split(".").length === 1);
+  if (unqualified_states.length === 1) {
+    const main_state = delta[unqualified_states[0]]
+    if (main_state.is_hydrated !== undefined && !main_state.is_hydrated) {
+      // skip if the state is not hydrated yet, since all client storage
+      // values are sent in the hydrate event
+      return;
+    }
+  }
+  // Save known client storage values to cookies and localStorage.
+  for (const substate in delta) {
+    for (const key in delta[substate]) {
+      const state_key = `${substate}.${key}`
+      if (client_storage.cookies && state_key in client_storage.cookies) {
+        const cookie_options = { ...client_storage.cookies[state_key] }
+        const cookie_name = cookie_options.name || state_key
+        delete cookie_options.name  // name is not a valid cookie option
+        cookies.set(cookie_name, delta[substate][key], cookie_options);
+      } else if (client_storage.local_storage && state_key in client_storage.local_storage && (typeof window !== 'undefined')) {
+        const options = client_storage.local_storage[state_key]
+        localStorage.setItem(options.name || state_key, delta[substate][key]);
+      }
+    }
+  }
+}
+
+/**
  * Establish websocket event loop for a NextJS page.
- * @param initial_state The initial page state.
- * @param initial_events Array of events to seed the queue after connecting.
+ * @param initial_state The initial app state.
+ * @param initial_events The initial app events.
+ * @param client_storage The client storage object from context.js
  *
- * @returns [state, Event, notConnected] -
+ * @returns [state, addEvents, connectError] -
  *   state is a reactive dict,
- *   Event is used to queue an event, and
- *   notConnected is a reactive boolean indicating whether the websocket is connected.
+ *   addEvents is used to queue an event, and
+ *   connectError is a reactive js error from the websocket connection (or null if connected).
  */
 export const useEventLoop = (
   initial_state = {},
   initial_events = [],
+  client_storage = {},
 ) => {
   const socket = useRef(null)
   const router = useRouter()
   const [state, dispatch] = useReducer(applyDelta, initial_state)
-  const [notConnected, setNotConnected] = useState(false)
-  
+  const [connectError, setConnectError] = useState(null)
+
   // Function to add new events to the event queue.
-  const Event = (events, _e) => {
-      preventDefault(_e);
-      queueEvents(events, socket)
+  const addEvents = (events, _e) => {
+    preventDefault(_e);
+    queueEvents(events, socket)
   }
+
+  const sentHydrate = useRef(false);  // Avoid double-hydrate due to React strict-mode
+  // initial state hydrate
+  useEffect(() => {
+    if (router.isReady && !sentHydrate.current) {
+      addEvents(initial_events.map((e) => ({ ...e })))
+      sentHydrate.current = true
+    }
+  }, [router.isReady])
 
   // Main event loop.
   useEffect(() => {
@@ -386,7 +491,7 @@ export const useEventLoop = (
 
     // Initialize the websocket connection.
     if (!socket.current) {
-      connect(socket, dispatch, ['websocket', 'polling'], setNotConnected, initial_events)
+      connect(socket, dispatch, ['websocket', 'polling'], setConnectError, client_storage)
     }
     (async () => {
       // Process all outstanding events.
@@ -395,7 +500,7 @@ export const useEventLoop = (
       }
     })()
   })
-  return [state, Event, notConnected]
+  return [state, addEvents, connectError]
 }
 
 /***
@@ -445,4 +550,20 @@ export const getRefValues = (refs) => {
   }
   // getAttribute is used by RangeSlider because it doesn't assign value
   return refs.map((ref) => ref.current.value || ref.current.getAttribute("aria-valuenow"));
+}
+
+/**
+* Spread two arrays or two objects.
+* @param first The first array or object.
+* @param second The second array or object.
+* @returns The final merged array or object.
+*/
+export const spreadArraysOrObjects = (first, second) => {
+  if (Array.isArray(first) && Array.isArray(second)) {
+    return [...first, ...second];
+  } else if (typeof first === 'object' && typeof second === 'object') {
+    return { ...first, ...second };
+  } else {
+    throw new Error('Both parameters must be either arrays or objects.');
+  }
 }

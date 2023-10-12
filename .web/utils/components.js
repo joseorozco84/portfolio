@@ -5,6 +5,7 @@ import NextLink from "next/link"
 
 
 
+
 export const Navbar = memo(({}) => (
   <Flex sx={{"backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "backdropFilter": "blur(5px)", "position": "fixed", "top": "0", "zIndex": "1", "width": "100%", "alignItems": "center", "justifyContent": "center"}}>
   <Flex sx={{"width": "100%", "maxWidth": "1200px", "minWidth": "50%", "minHeight": "6vh", "padding": "0.5em", "textColor": "white", "fontSize": ["1em", "1.8em", "2em", "2em"], "alignItems": "center", "justifyContent": "space-evenly", "overflow": "hidden"}}>
