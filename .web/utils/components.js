@@ -20,7 +20,7 @@ export const Navbar = memo(({}) => (
   <Flex sx={{"justifyContent": "space-between", "alignItems": "center"}}>
   <Container>
   <Link as={NextLink} href={`/portfolio`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
-  {`.portfolio`}
+  {`.projects`}
 </Link>
 </Container>
   <Spacer/>
@@ -38,7 +38,7 @@ export const Navbar = memo(({}) => (
 </Text>
 </MenuButton>
   <MenuList sx={{"backgroundColor": "rgb(20, 20, 20, 0.95)", "backdropFilter": "blur(5px)", "borderColor": "rgb(20, 20, 20, 0.85)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px"}}>
-  <Link as={NextLink} href={`/contact`}>
+  <Link as={NextLink} href={`/contact`} sx={{"_hover": {"textDecoration": "none"}}}>
   <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
   <Image src={`/email_white.png`} sx={{"width": "32px"}}/>
@@ -49,7 +49,7 @@ export const Navbar = memo(({}) => (
 </MenuItem>
 </Link>
   <MenuDivider/>
-  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
   <Image src={`/github_white.png`} sx={{"width": "32px"}}/>
@@ -59,7 +59,7 @@ export const Navbar = memo(({}) => (
 </HStack>
 </MenuItem>
 </Link>
-  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
+  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <MenuItem sx={{"textColor": "gray", "justifyContent": "left", "_hover": {"bgColor": "#2b6cb0", "textColor": "white"}, "bgColor": "inherit"}}>
   <HStack>
   <Image src={`/linkedin_white.png`} sx={{"width": "32px"}}/>

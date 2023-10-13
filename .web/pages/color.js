@@ -62,7 +62,7 @@ export default function Component() {
   <Fragment/>
 )}
 </Fragment>
-  <Box sx={{"backgroundColor": parent_state.color_picker_state.color, "padding": "5em", "borderRadius": "1em"}}>
+  <Box sx={{"backgroundColor": parent_state.color_picker_state.color, "padding": "5em"}}>
   <VStack>
   <Heading>
   {parent_state.color_picker_state.color}

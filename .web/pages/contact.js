@@ -36,8 +36,8 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
@@ -71,17 +71,17 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <Box sx={{"width": "90%", "maxWidth": "800px"}}>
-  <SimpleGrid sx={{"marginTop": "80px", "marginBottom": "10%", "gap": "20px"}}>
+  <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
   <Box>
-  <Box sx={{"justifyContent": "center", "maxHeight": "100vh", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "backdropFilter": "blur(5px)", "borderRadius": "10px"}}>
+  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
   <Box as={`form`}>
   <VStack sx={{"rowGap": "2em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}
 </Heading>
-  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
-  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "overflow": "hidden", "borderColor": "transparent"}} type={`text`}/>
-  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "height": "300px", "textColor": "black", "borderColor": "transparent", "resize": "none", "maxHeight": "200px"}}/>
+  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
+  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
+  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none", "height": "200px", "maxHeight": "300px"}}/>
   <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
   {`Send`}
   <EmailIcon/>
@@ -109,9 +109,9 @@ export default function Component() {
 </Box>
 </Box>
 </Box>
-  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
   <HStack sx={{"gap": "2em"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>
   <Image src={`/github_white.png`} sx={{"width": "48px"}}/>
   <Text>
@@ -119,7 +119,7 @@ export default function Component() {
 </Text>
 </VStack>
 </Link>
-  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true}>
+  <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <VStack sx={{"bgColor": "rgb(30, 63, 100, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(30, 63, 100, 0.95)"}}}>
   <Image src={`/linkedin_white.png`} sx={{"width": "48px"}}/>
   <Text>

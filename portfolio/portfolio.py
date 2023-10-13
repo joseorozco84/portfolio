@@ -18,7 +18,7 @@ def color() -> rx.Component:
         ),
         background_color=ColorPickerState.color,
         padding="5em",
-        border_radius="1em",
+        # border_radius="1em",
     )
 
 # home page
@@ -27,17 +27,8 @@ def home() -> rx.Component:
         rx.vstack(
             navbar.navbar(),
             home_page.home(),
-            picker(
-                on_change=ColorPickerState.set_color,
-            ),
         ),
-        max_width="100%",
-        # background_color="rgb(1, 1, 1, 0.25)",
-        min_height="100vh",
-        background_image=f"linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
-        background_position="center",
-        background_repeat="no-repeat",
-        background_size="cover",
+        style = box_style,
     )
 
 # portfolio page
@@ -47,14 +38,7 @@ def portfolio() -> rx.Component:
             navbar.navbar(),
             portfolio_page.portfolio(),
         ),
-        max_width="100%",
-        # background_color="rgb(1, 1, 1, 0.25)",
-        min_height="100vh",
-        background_image="linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
-        background_position="center",
-        background_repeat="no-repeat",
-        background_size="cover",
-        
+        style = box_style,
     )
 
 # about page
@@ -64,14 +48,7 @@ def about() -> rx.Component:
             navbar.navbar(),
             about_page.about(),
         ),
-        max_width="100%",
-        # background_color="rgb(1, 1, 1, 0.25)",
-        min_height="100vh",
-        background_image="linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
-        background_position="center",
-        background_repeat="no-repeat",
-        background_size="cover",
-        
+        style = box_style,        
     )
 
 # contact page
@@ -81,23 +58,25 @@ def contact() -> rx.Component:
             navbar.navbar(),
             contact_page.contact(),
         ),
-        max_width="100%",
-        # background_color="rgb(1, 1, 1, 0.25)",
-        min_height="100vh",
-        background_image="linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
-        background_position="center",
-        background_repeat="no-repeat",
-        background_size="cover",
+        style = box_style,
     )
 
-style = {
+general_text_style = {
     "font_family": "monospace",
     "text_color": "white",
 }
 
+box_style = {
+    "max_width": "100%",
+    "min_height": "100vh",
+    "background_image": "linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
+    "background_position": "center",
+    "background_repeat": "no-repeat",
+    "background_size": "cover",
+}
 
 # Add state and page to the app.
-app = rx.App(style=style)
+app = rx.App(style=general_text_style)
 app.add_page(home, title="Portfolio -> Home")
 app.add_page(portfolio, title="Portfolio -> Repositories")
 app.add_page(about, title="Portfolio -> About")

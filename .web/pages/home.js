@@ -5,7 +5,6 @@ import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js
 import "focus-visible/dist/focus-visible"
 import { Box, Center, Heading, Image, List, ListItem, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
-import { HexColorPicker } from "react-colorful"
 import NextHead from "next/head"
 
 
@@ -100,7 +99,6 @@ export default function Component() {
 </Center>
 </SimpleGrid>
 </Box>
-  <HexColorPicker onChange={(_e0) => addEvents([Event("parent_state.color_picker_state.set_color", {value:_e0})], (_e0))}/>
 </VStack>
 </Box>
   <NextHead>

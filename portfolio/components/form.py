@@ -17,29 +17,20 @@ def form():
                     rx.input(
                         placeholder="Name...",
                         id="name",
-                        bg_color="rgb(255, 255, 255, 0.75)",
-                        text_color="black",
-                        overflow="hidden",
-                        border_color="transparent",
                         is_required=True,
+                        style=input_style,
                     ),
                     rx.input(
                         placeholder="Email...",
                         id="email",
-                        bg_color="rgb(255, 255, 255, 0.75)",
-                        text_color="black",
-                        overflow="hidden",
-                        border_color="transparent",
+                        style=input_style,
                     ),
                     rx.text_area(
                         placeholder="Write your message...",
                         id="message",
-                        bg_color="rgb(255, 255, 255, 0.75)",
-                        height="300px",
-                        text_color="black",
-                        border_color="transparent",
-                        resize="none",
-                        max_height="200px",
+                        height="200px",
+                        max_height="300px",
+                        style=input_style,
                         is_required=True,
                     ),
                     rx.button(
@@ -87,14 +78,7 @@ def form():
                     is_centered=True,
                 ),
             ),
-            justify_content="center",
-            max_height="100vh",
-            max_width="800px",
-            padding=["2em","2em","3em","3em"],
-            background_color="rgb(20, 20, 20, 0.5)",
-            box_shadow="rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
-            backdrop_filter="blur(5px)",
-            border_radius="10px",
+            style=box_style,
         ),
     )
 
@@ -121,6 +105,9 @@ def social():
                 ),
                 href="https://github.com/joseorozco84",
                 is_external=True,
+                _hover={
+                    "text_decoration":"none"
+                },
             ),
             rx.link(
                 rx.vstack(
@@ -141,17 +128,30 @@ def social():
                 ),
                 href="https://www.linkedin.com/in/jose-orozco-79367143/",
                 is_external=True,
+                _hover={
+                    "text_decoration":"none"
+                },
             ),
             gap="2em",
         ),
-        justify_content="center",
-        max_width="800px",
-        padding=["2em","2em","3em","3em"],
-        backdrop_filter="blur(5px)",
-        background_color="rgb(20, 20, 20, 0.5)",
-        box_shadow="rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
-        border_radius="10px",
-        place_self="center",
-        user_select="none",
-        
+        style=box_style,
     )
+
+input_style = {
+    "bg_color":"rgb(255, 255, 255, 0.75)",
+    "text_color":"black",
+    "border_color":"transparent",
+    "resize":"none",
+}
+
+box_style = {
+    "justify_content":"center",
+    "max_width":"800px",
+    "padding":["2em","2em","3em","3em"],
+    "background_color":"rgb(20, 20, 20, 0.5)",
+    "backdrop_filter":"blur(5px)",
+    "box_shadow":"rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
+    "border_radius":"10px",
+    "place_self":"center",
+    "user_select":"none",
+}

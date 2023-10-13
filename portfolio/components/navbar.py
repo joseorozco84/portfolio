@@ -20,7 +20,7 @@ def navbar():
             rx.flex(
                 rx.container(
                     rx.link(
-                        ".portfolio",
+                        ".projects",
                         href="/portfolio",
                         _hover={"color":"#2b6cb0"},
                         font_weight="bold",
@@ -105,6 +105,9 @@ def menu():
                     bg_color="inherit",
                 ),
                 href="/contact",
+                _hover={
+                    "text_decoration":"none"
+                },
             ),
             rx.menu_divider(),
             rx.link(
@@ -130,6 +133,9 @@ def menu():
                 ),
                 href="https://github.com/joseorozco84",
                 is_external=True,
+                _hover={
+                    "text_decoration":"none"
+                },
             ),
             rx.link(
                 rx.menu_item(
@@ -154,6 +160,9 @@ def menu():
                 ),
                 href="https://www.linkedin.com/in/jose-orozco-79367143/",
                 is_external=True,
+                _hover={
+                    "text_decoration":"none"
+                },
 
             ),
             background_color="rgb(20, 20, 20, 0.95)",
