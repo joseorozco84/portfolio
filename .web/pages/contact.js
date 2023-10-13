@@ -36,9 +36,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
     <Fragment>
@@ -135,7 +135,7 @@ export default function Component() {
 </Box>
   <NextHead>
   <title>
-  {`Portfolio -> Contact`}
+  {`Contact`}
 </title>
   <meta content={`A Reflex app.`} name={`description`}/>
   <meta content={`favicon.ico`} property={`og:image`}/>

@@ -1,7 +1,7 @@
 import reflex as rx
 from portfolio.components import repos
 
-def portfolio():
+def repositories():
     return rx.box(
         rx.responsive_grid(
             repos.repo1(),

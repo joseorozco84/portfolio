@@ -4,7 +4,7 @@ from rxconfig import config
 import reflex as rx
 from .components import navbar
 from .components.classes import  ColorPicker, ColorPickerState
-from .pages	import home_page, about_page, contact_page, portfolio_page
+from .pages	import home_page, about_page, contact_page, projects_page
 
 picker = ColorPicker.create
 
@@ -32,11 +32,11 @@ def home() -> rx.Component:
     )
 
 # portfolio page
-def portfolio() -> rx.Component:
+def projects() -> rx.Component:
     return rx.box(
         rx.vstack(
             navbar.navbar(),
-            portfolio_page.portfolio(),
+            projects_page.repositories(),
         ),
         style = box_style,
     )
@@ -77,9 +77,9 @@ box_style = {
 
 # Add state and page to the app.
 app = rx.App(style=general_text_style)
-app.add_page(home, title="Portfolio -> Home")
-app.add_page(portfolio, title="Portfolio -> Repositories")
-app.add_page(about, title="Portfolio -> About")
-app.add_page(contact, title="Portfolio -> Contact")
+app.add_page(home, title="Home")
+app.add_page(projects, title="Repositories")
+app.add_page(about, title="About")
+app.add_page(contact, title="Contact")
 app.add_page(color)
 app.compile()
