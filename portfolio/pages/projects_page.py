@@ -3,7 +3,7 @@ from portfolio.components import repos
 
 def repositories():
     return rx.box(
-        rx.responsive_grid(
+        rx.vstack(
             repos.repo1(),
             repos.repo2(),
             repos.repo3(),
@@ -11,7 +11,7 @@ def repositories():
             repos.repo5(),
             repos.repo6(),
             repos.repo7(),
-            columns=[1,1,2,3,3],
+            # columns=[1,1,1,1,1],
             gap="20px",
             margin_top=["20%","10%"],
             margin_bottom="10%",

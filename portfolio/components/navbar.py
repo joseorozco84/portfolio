@@ -21,7 +21,7 @@ def navbar():
                 rx.container(
                     rx.link(
                         ".projects",
-                        href="/portfolio",
+                        href="/projects",
                         _hover={"color":"#2b6cb0"},
                         font_weight="bold",
                         user_select="none",

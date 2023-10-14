@@ -19,7 +19,7 @@ export const Navbar = memo(({}) => (
   <Spacer/>
   <Flex sx={{"justifyContent": "space-between", "alignItems": "center"}}>
   <Container>
-  <Link as={NextLink} href={`/portfolio`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
+  <Link as={NextLink} href={`/projects`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.projects`}
 </Link>
 </Container>

@@ -3,11 +3,29 @@ import reflex as rx
 def repo1():
     return rx.link(
         rx.box(
-            rx.center(
+            rx.responsive_grid(
+                rx.image(src="/Placeholder.png",width="100vw",height="100%", object_fit="cover"),
                 rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Portfolio",)
+                    rx.flex(
+                        rx.heading("Portfolio",),
+                        rx.spacer(),
+                        rx.hstack(
+                            rx.image(src="/favicon.ico",),
+                            rx.image(src="/favicon.ico",),
+                            rx.image(src="/favicon.ico",),
+                        ),
+                        width="100%",
+                        
+                    ),
+                    rx.text("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus elit quis finibus sodales. Curabitur laoreet consectetur ligula, a ultricies dolor ullamcorper sed. Phasellus lobortis, massa vel sagittis cursus, urna nisl vulputate ligula, ut maximus velit orci eu mi.""",
+                    ),
+                    align_items="self-start",
+                    gap="20px",
+                    # display="flex",
+                    # flex_direction="column",
                 ),
+                columns=[1,1,2,2,2],
+                gap="20px",
             ),
             style=box_style,
         ),

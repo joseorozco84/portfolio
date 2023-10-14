@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Center, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, SimpleGrid, Text, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Center, Flex, Heading, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, SimpleGrid, Spacer, Text, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import NextLink from "next/link"
 import NextHead from "next/head"
@@ -67,17 +67,28 @@ export default function Component() {
   <VStack>
   <Navbar/>
   <Box sx={{"width": "90%", "maxWidth": "1200px"}}>
-  <SimpleGrid columns={[1, 1, 2, 3, 3]} sx={{"gap": "20px", "marginTop": ["20%", "10%"], "marginBottom": "10%"}}>
+  <VStack sx={{"gap": "20px", "marginTop": ["20%", "10%"], "marginBottom": "10%"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <Box sx={{"padding": "1em", "backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Center>
-  <VStack>
-  <Image src={`/Placeholder.png`} sx={{"width": "256px"}}/>
-  <Text>
+  <SimpleGrid columns={[1, 1, 2, 2, 2]} sx={{"gap": "20px"}}>
+  <Image src={`/Placeholder.png`} sx={{"width": "100vw", "height": "100%", "objectFit": "cover"}}/>
+  <VStack alignItems={`self-start`} sx={{"gap": "20px"}}>
+  <Flex sx={{"width": "100%"}}>
+  <Heading>
   {`Portfolio`}
+</Heading>
+  <Spacer/>
+  <HStack>
+  <Image src={`/favicon.ico`}/>
+  <Image src={`/favicon.ico`}/>
+  <Image src={`/favicon.ico`}/>
+</HStack>
+</Flex>
+  <Text>
+  {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus elit quis finibus sodales. Curabitur laoreet consectetur ligula, a ultricies dolor ullamcorper sed. Phasellus lobortis, massa vel sagittis cursus, urna nisl vulputate ligula, ut maximus velit orci eu mi.`}
 </Text>
 </VStack>
-</Center>
+</SimpleGrid>
 </Box>
 </Link>
   <Link as={NextLink} href={`https://github.com/joseorozco84/farmacia`} isExternal={true} sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
@@ -152,7 +163,7 @@ export default function Component() {
 </Center>
 </Box>
 </Link>
-</SimpleGrid>
+</VStack>
 </Box>
 </VStack>
 </Box>
