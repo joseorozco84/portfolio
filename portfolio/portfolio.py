@@ -11,10 +11,15 @@ picker = ColorPicker.create
 def color() -> rx.Component:
     return rx.box(
         rx.vstack(
-            rx.heading(ColorPickerState.color),
+            rx.box(
+                rx.heading("React Color Picker component"),
+            ),
+            rx.divider(border_color="gray"),
+            rx.text(ColorPickerState.color),
             picker(
                 on_change=ColorPickerState.set_color,
             ),
+            height="100vh",
         ),
         background_color=ColorPickerState.color,
         padding="5em",

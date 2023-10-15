@@ -35,7 +35,7 @@ def repo2():
                 # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
-                    rx.text("Farmacia Database",font_size=["18px","22px"]),
+                    rx.text("Pharmacy Database",font_size=["18px","22px"]),
                     rx.spacer(),
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
@@ -105,7 +105,7 @@ def repo4():
                     width="100%",                        
                 ),
                 rx.divider(border_color="gray"),
-                rx.text("""My password generator project was developed while I was in the process of learning Python and Django. With this application, users can easily create secure and unique passwords. As I advanced in my learning journey, I built this tool as a part of my personal development and to apply my knowledge in web application development. The password generator serves as a testament to my progress and skills in Python and Django, offering a practical solution to enhance online security.""",
+                rx.text("""My password generator project was developed while I was in the process of learning Python and Django. With this application, users can easily create secure and unique passwords. As I advanced in my learning journey, I built this tool as a part of my personal development and to apply my knowledge in web application development. The password generator serves as a testament to my progress and skills in Python and Django.""",
                     style=text_style,
                 ),
                 align_items="self-start",
@@ -119,35 +119,63 @@ def repo4():
     )
 
 def repo5():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Sudoku Generator",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Sudoku Generator",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""My Sudoku generator project, created while learning Python, automatically generates Sudoku puzzles. It offers logic-based challenges with customizable difficulty levels and provides solutions for each puzzle. The user interface (UI) was built using Tkinter, showcasing my programming progress and offering a fun experience for puzzle enthusiasts.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/sudoku-generator",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo6():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Metacritic Scraper",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Metacritic Scraper",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/scraper",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo7():

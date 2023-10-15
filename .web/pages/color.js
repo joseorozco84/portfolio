@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Heading, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Text, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Divider, Heading, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Text, useColorMode, VStack } from "@chakra-ui/react"
 import { HexColorPicker } from "react-colorful"
 import NextHead from "next/head"
 
@@ -63,10 +63,16 @@ export default function Component() {
 )}
 </Fragment>
   <Box sx={{"backgroundColor": parent_state.color_picker_state.color, "padding": "5em"}}>
-  <VStack>
+  <VStack sx={{"height": "100vh"}}>
+  <Box>
   <Heading>
-  {parent_state.color_picker_state.color}
+  {`React Color Picker component`}
 </Heading>
+</Box>
+  <Divider sx={{"borderColor": "gray"}}/>
+  <Text>
+  {parent_state.color_picker_state.color}
+</Text>
   <HexColorPicker onChange={(_e0) => addEvents([Event("parent_state.color_picker_state.set_color", {value:_e0})], (_e0))}/>
 </VStack>
 </Box>

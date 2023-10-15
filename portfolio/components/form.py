@@ -14,6 +14,7 @@ def form():
                         font_size=["1.5em","1.8em", "1.8em", "1.8em", "2em"],
                         font_family="monospace",
                     ),
+                    rx.divider(border_color="gray"),
                     rx.input(
                         placeholder="Name...",
                         id="name",
@@ -49,7 +50,7 @@ def form():
                             "transition": "0.25s",
                         },
                     ),
-                    row_gap="2em",
+                    row_gap="1em",
                 ),
             ),
             rx.box(
@@ -146,7 +147,7 @@ input_style = {
 
 box_style = {
     "justify_content":"center",
-    "max_width":"800px",
+    # "max_width":"800px",
     "padding":["2em","2em","3em","3em"],
     "background_color":"rgb(20, 20, 20, 0.5)",
     "backdrop_filter":"blur(5px)",

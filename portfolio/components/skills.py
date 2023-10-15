@@ -5,44 +5,24 @@ def skills():
         rx.list(
             rx.list_item(
                 "💻 Programming Skills",
-                _hover={
-                    "transform": "scale(1.1)",
-                    "transition": "0.5s",
-                    "color":"#2b6cb0",
-                    },
+                style=items_style,
                 ),
             rx.list_item(
                 "🧩 Problem-Solving",
-                _hover={
-                    "transform": "scale(1.1)",
-                    "transition": "0.5s",
-                    "color":"#2b6cb0",
-                    },
+                style=items_style,
                 ),
             rx.list_item(
                 "🤝 Team Collaboration",
-                _hover={
-                    "transform": "scale(1.1)",
-                    "transition": "0.5s",
-                    "color":"#2b6cb0",
-                    },
+                style=items_style,
                 )
                 ,
             rx.list_item(
                 "📂 Project Management",
-                _hover={
-                    "transform": "scale(1.1)",
-                    "transition": "0.5s",
-                    "color":"#2b6cb0",
-                    },
+                style=items_style,
                 ),
             rx.list_item(
                 "🌟 Adaptability",
-                _hover={
-                    "transform": "scale(1.1)",
-                    "transition": "0.5s",
-                    "color":"#2b6cb0",
-                    },
+                style=items_style,
                 ),
             margin="1em",
             spacing="1em",
@@ -57,3 +37,11 @@ def skills():
         min_height="350px",
         user_select="none",
     )
+
+items_style = {
+    "_hover":{
+        "transform": "scale(1.1)",
+        "transition": "0.5s",
+        "color":"#2b6cb0",
+    }
+}

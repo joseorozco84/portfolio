@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, set_val, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Button, Heading, HStack, Image, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Button, Divider, Heading, HStack, Image, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import { EmailIcon } from "@chakra-ui/icons"
 import NextLink from "next/link"
@@ -73,12 +73,13 @@ export default function Component() {
   <Box sx={{"width": "90%", "maxWidth": "800px"}}>
   <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
   <Box>
-  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
   <Box as={`form`}>
-  <VStack sx={{"rowGap": "2em"}}>
+  <VStack sx={{"rowGap": "1em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}
 </Heading>
+  <Divider sx={{"borderColor": "gray"}}/>
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
   <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
   <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none", "height": "200px", "maxHeight": "300px"}}/>
@@ -109,7 +110,7 @@ export default function Component() {
 </Box>
 </Box>
 </Box>
-  <Box sx={{"justifyContent": "center", "maxWidth": "800px", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
   <HStack sx={{"gap": "2em"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>

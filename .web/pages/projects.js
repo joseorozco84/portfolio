@@ -97,7 +97,7 @@ export default function Component() {
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
-  {`Farmacia Database`}
+  {`Pharmacy Database`}
 </Text>
   <Spacer/>
   <HStack>
@@ -168,35 +168,53 @@ export default function Component() {
 </Flex>
   <Divider sx={{"borderColor": "gray"}}/>
   <Text sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
-  {`My password generator project was developed while I was in the process of learning Python and Django. With this application, users can easily create secure and unique passwords. As I advanced in my learning journey, I built this tool as a part of my personal development and to apply my knowledge in web application development. The password generator serves as a testament to my progress and skills in Python and Django, offering a practical solution to enhance online security.`}
+  {`My password generator project was developed while I was in the process of learning Python and Django. With this application, users can easily create secure and unique passwords. As I advanced in my learning journey, I built this tool as a part of my personal development and to apply my knowledge in web application development. The password generator serves as a testament to my progress and skills in Python and Django.`}
 </Text>
 </VStack>
 </Link>
 </Box>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/sudoku-generator`} isExternal={true} sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Center>
-  <VStack>
-  <Image src={`/Placeholder.png`} sx={{"width": "256px"}}/>
-  <Text>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
+  <Flex sx={{"width": "100%"}}>
+  <Text sx={{"fontSize": ["18px", "22px"]}}>
   {`Sudoku Generator`}
 </Text>
-</VStack>
-</Center>
-</Box>
-</Link>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/scraper`} isExternal={true} sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
-  <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Center>
-  <VStack>
-  <Image src={`/Placeholder.png`} sx={{"width": "256px"}}/>
-  <Text>
-  {`Metacritic Scraper`}
+  <Spacer/>
+  <HStack>
+  <Tooltip label={`Python`}>
+  <Image src={`/langs/icons8-python-32.ico`} sx={{"width": ["16px", "32px"]}}/>
+</Tooltip>
+</HStack>
+</Flex>
+  <Divider sx={{"borderColor": "gray"}}/>
+  <Text sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
+  {`My Sudoku generator project, created while learning Python, automatically generates Sudoku puzzles. It offers logic-based challenges with customizable difficulty levels and provides solutions for each puzzle. The user interface (UI) was built using Tkinter, showcasing my programming progress and offering a fun experience for puzzle enthusiasts.`}
 </Text>
 </VStack>
-</Center>
-</Box>
 </Link>
+</Box>
+  <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
+  <Flex sx={{"width": "100%"}}>
+  <Text sx={{"fontSize": ["18px", "22px"]}}>
+  {`Metacritic Scraper`}
+</Text>
+  <Spacer/>
+  <HStack>
+  <Tooltip label={`Python`}>
+  <Image src={`/langs/icons8-python-32.ico`} sx={{"width": ["16px", "32px"]}}/>
+</Tooltip>
+</HStack>
+</Flex>
+  <Divider sx={{"borderColor": "gray"}}/>
+  <Text sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
+  {`My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.`}
+</Text>
+</VStack>
+</Link>
+</Box>
   <Link as={NextLink} href={`https://github.com/joseorozco84/Image-to-ASCII`} isExternal={true} sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
   <Center>
