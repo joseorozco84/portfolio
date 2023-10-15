@@ -69,7 +69,7 @@ general_text_style = {
 box_style = {
     "max_width": "100%",
     "min_height": "100vh",
-    "background_image": "linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)",
+    "background_image": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)",
     "background_position": "center",
     "background_repeat": "no-repeat",
     "background_size": "cover",

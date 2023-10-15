@@ -1,85 +1,121 @@
 import reflex as rx
 
 def repo1():
-    return rx.link(
-        rx.box(
-            rx.responsive_grid(
-                rx.image(src="/Placeholder.png",width="100vw",height="100%", object_fit="cover"),
-                rx.vstack(
-                    rx.flex(
-                        rx.heading("Portfolio",),
-                        rx.spacer(),
-                        rx.hstack(
-                            rx.image(src="/favicon.ico",),
-                            rx.image(src="/favicon.ico",),
-                            rx.image(src="/favicon.ico",),
-                        ),
-                        width="100%",
-                        
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Portfolio Web",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
-                    rx.text("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus elit quis finibus sodales. Curabitur laoreet consectetur ligula, a ultricies dolor ullamcorper sed. Phasellus lobortis, massa vel sagittis cursus, urna nisl vulputate ligula, ut maximus velit orci eu mi.""",
-                    ),
-                    align_items="self-start",
-                    gap="20px",
-                    # display="flex",
-                    # flex_direction="column",
+                    width="100%",                        
                 ),
-                columns=[1,1,2,2,2],
-                gap="20px",
+                rx.divider(border_color="gray"),
+                rx.text("""My portfolio web project is an elegant and fully responsive platform designed to showcase my work and skills effectively. Developed using Python and the modern Reflex framework, this website ensures an exceptional user experience on devices of all sizes. I present my portfolio in an appealing manner, highlighting my projects, achievements, and skills in a visually attractive and easy-to-navigate way.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/portfolio",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo2():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Farmacia",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Farmacia Database",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        rx.tooltip(rx.image(src="/langs/icons8-sql-32.ico",width=["16px","32px"]),label="MySQL"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-api-32.ico",width=["16px","32px"]),label="FastAPI"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""My database project is centered around a pharmacy chain and utilizes MySQL as the database management system. I gather and analyze data related to sales, inventory, and other relevant aspects of pharmacy operations. I then visualize this data through a dashboard with bar charts and pie charts, providing a clear visual representation of trends and patterns. Additionally, I have integrated FastAPI to create endpoints that enable efficient and secure access to this data via a web dashboard, making it easy to interact with and query the information stored in the database.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/farmacia",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo3():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Coderblog",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Coderblog Web",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
+                        rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""CoderBlog is a collaborative web project created with Python and the Django framework. It represents the collective efforts of a team of three individuals, including myself. CoderBlog serves as a dynamic platform where we share our insights, experiences, and expertise in the world of coding, software development, and technology. Through a user-friendly and aesthetically pleasing interface, we provide informative and engaging content, including articles, tutorials, and discussions, all centered around the ever-evolving field of coding. Our joint efforts have culminated in a rich resource for both seasoned developers and those just embarking on their coding journey.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/coderblog",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo4():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Password Generator",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Password Generator",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
+                        rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""My password generator project was developed while I was in the process of learning Python and Django. With this application, users can easily create secure and unique passwords. As I advanced in my learning journey, I built this tool as a part of my personal development and to apply my knowledge in web application development. The password generator serves as a testament to my progress and skills in Python and Django, offering a practical solution to enhance online security.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/portfolio",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/pass_gen",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 def repo5():
@@ -133,7 +169,7 @@ def repo7():
 
 
 box_style = {
-    "padding": "1em",
+    # "padding": "1em",
     "backdrop_filter": "blur(5px)",
     "background_color": "rgb(20, 20, 20, 0.5)",
     "box_shadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px",
@@ -143,10 +179,16 @@ box_style = {
 
 text_style = {
     "text_color": "white",
-    "font_size": ["18px","22px"],
+    "font_size": ["14px","17px"],
     "font_weight": "bold",
     "font_family": "monospace",
-    "margin": "3%",
+}
+
+href_style = {
+    "text_color": "white",
+    "font_size": ["20px","24px"],
+    "font_weight": "bold",
+    "font_family": "monospace",
     "_hover":{
         "text_decoration": "none",
         "text_color": "#2b6cb0",

@@ -36,9 +36,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
     <Fragment>
@@ -67,7 +67,7 @@ export default function Component() {
   <Fragment/>
 )}
 </Fragment>
-  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #313d57 50.75%, #835454 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
+  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
   <Box sx={{"width": "90%", "maxWidth": "800px"}}>
