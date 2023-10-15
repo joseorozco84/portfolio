@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Center, Divider, Flex, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Divider, Flex, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import NextLink from "next/link"
 import NextHead from "next/head"
@@ -93,7 +93,7 @@ export default function Component() {
 </Link>
 </Box>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/farmacia`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
@@ -117,7 +117,7 @@ export default function Component() {
 </Link>
 </Box>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/coderblog`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
@@ -147,7 +147,7 @@ export default function Component() {
 </Link>
 </Box>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/pass_gen`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
@@ -174,7 +174,7 @@ export default function Component() {
 </Link>
 </Box>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/sudoku-generator`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
@@ -195,7 +195,7 @@ export default function Component() {
 </Link>
 </Box>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <Link as={NextLink} href={`https://github.com/joseorozco84/scraper2`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
   <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
   <Flex sx={{"width": "100%"}}>
   <Text sx={{"fontSize": ["18px", "22px"]}}>
@@ -215,18 +215,27 @@ export default function Component() {
 </VStack>
 </Link>
 </Box>
-  <Link as={NextLink} href={`https://github.com/joseorozco84/Image-to-ASCII`} isExternal={true} sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Center>
-  <VStack>
-  <Image src={`/Placeholder.png`} sx={{"width": "256px"}}/>
-  <Text>
-  {`Image to ASCII`}
+  <Link as={NextLink} href={`https://github.com/joseorozco84/Image-to-ASCII`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
+  <VStack alignItems={`self-start`} sx={{"margin": "26px"}}>
+  <Flex sx={{"width": "100%"}}>
+  <Text sx={{"fontSize": ["18px", "22px"]}}>
+  {`Image to ASCII Generator`}
+</Text>
+  <Spacer/>
+  <HStack>
+  <Tooltip label={`Python`}>
+  <Image src={`/langs/icons8-python-32.ico`} sx={{"width": ["16px", "32px"]}}/>
+</Tooltip>
+</HStack>
+</Flex>
+  <Divider sx={{"borderColor": "gray"}}/>
+  <Text sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
+  {`My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.`}
 </Text>
 </VStack>
-</Center>
-</Box>
 </Link>
+</Box>
 </VStack>
 </Box>
 </VStack>

@@ -51,7 +51,7 @@ def repo2():
                 align_items="self-start",
                 margin="26px",
             ),
-            href="https://github.com/joseorozco84/portfolio",
+            href="https://github.com/joseorozco84/farmacia",
             is_external=True,
             style=href_style,
         ),
@@ -81,7 +81,7 @@ def repo3():
                 align_items="self-start",
                 margin="26px",
             ),
-            href="https://github.com/joseorozco84/portfolio",
+            href="https://github.com/joseorozco84/coderblog",
             is_external=True,
             style=href_style,
         ),
@@ -111,7 +111,7 @@ def repo4():
                 align_items="self-start",
                 margin="26px",
             ),
-            href="https://github.com/joseorozco84/portfolio",
+            href="https://github.com/joseorozco84/pass_gen",
             is_external=True,
             style=href_style,
         ),
@@ -141,7 +141,7 @@ def repo5():
                 align_items="self-start",
                 margin="26px",
             ),
-            href="https://github.com/joseorozco84/portfolio",
+            href="https://github.com/joseorozco84/sudoku-generator",
             is_external=True,
             style=href_style,
         ),
@@ -171,7 +171,7 @@ def repo6():
                 align_items="self-start",
                 margin="26px",
             ),
-            href="https://github.com/joseorozco84/portfolio",
+            href="https://github.com/joseorozco84/scraper2",
             is_external=True,
             style=href_style,
         ),
@@ -179,19 +179,33 @@ def repo6():
     )
 
 def repo7():
-    return rx.link(
-        rx.box(
-            rx.center(
-                rx.vstack(
-                    rx.image(src="/Placeholder.png", width="256px"),
-                    rx.text("Image to ASCII",)
+    return rx.box(
+        rx.link(
+                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
+            rx.vstack(
+                rx.flex(
+                    rx.text("Image to ASCII Generator",font_size=["18px","22px"]),
+                    rx.spacer(),
+                    rx.hstack(
+                        rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
+                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
+                    ),
+                    width="100%",                        
                 ),
+                rx.divider(border_color="gray"),
+                rx.text("""My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.""",
+                    style=text_style,
+                ),
+                align_items="self-start",
+                margin="26px",
             ),
-            style=box_style,
+            href="https://github.com/joseorozco84/Image-to-ASCII",
+            is_external=True,
+            style=href_style,
         ),
-        href="https://github.com/joseorozco84/Image-to-ASCII",
-        is_external=True,
-        style=text_style,
+        style=box_style,
     )
 
 
