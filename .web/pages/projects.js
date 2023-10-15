@@ -231,7 +231,7 @@ export default function Component() {
 </Flex>
   <Divider sx={{"borderColor": "gray"}}/>
   <Text sx={{"textColor": "white", "fontSize": ["14px", "17px"], "fontWeight": "bold", "fontFamily": "monospace"}}>
-  {`My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.`}
+  {`My project for converting images to ASCII characters is an application that takes images as input and transforms them into artistic representations using ASCII characters. This program replaces the pixels of the image with ASCII characters to create a visually unique version of the original image. It showcases my programming skills and offers an intriguing way to interpret images through code.`}
 </Text>
 </VStack>
 </Link>

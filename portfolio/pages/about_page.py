@@ -9,20 +9,11 @@ def about():
                 rx.tab_list(
                     rx.tab(
                         "About me",
-                        backdrop_filter="blur(5px)",
-                        border_radius="10px 10px 0px 0px",
-                        background_color="rgb(20, 20, 20, 0.5)",
-                        font_size=["14px","24px"],
-                        font_weight="bold",
-                        # padding="0px"
+                        style=tab_style,
                     ),
                     rx.tab(
                         "About page",
-                        backdrop_filter="blur(5px)",
-                        border_radius="10px 10px 0px 0px",
-                        background_color="rgb(20, 20, 20, 0.5)",
-                        font_size=["14px","24px"],
-                        font_weight="bold",
+                        style=tab_style,
                     ),
                     border_bottom="none",
                     padding_left="25px",
@@ -50,3 +41,11 @@ def about():
         width="90%",
         max_width="1200px",
     )
+
+tab_style = {
+    "backdrop_filter": "blur(5px)",
+    "border_radius": "10px 10px 0px 0px",
+    "background_color": "rgb(20, 20, 20, 0.5)",
+    "font_size": ["14px","24px"],
+    "font_weight": "bold",
+}

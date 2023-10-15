@@ -3,7 +3,6 @@ import reflex as rx
 def repo1():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Portfolio Web",font_size=["18px","22px"]),
@@ -11,7 +10,6 @@ def repo1():
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
                         rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
                     width="100%",                        
                 ),
@@ -32,7 +30,6 @@ def repo1():
 def repo2():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Pharmacy Database",font_size=["18px","22px"]),
@@ -40,7 +37,6 @@ def repo2():
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
                         rx.tooltip(rx.image(src="/langs/icons8-sql-32.ico",width=["16px","32px"]),label="MySQL"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-api-32.ico",width=["16px","32px"]),label="FastAPI"),
                     ),
                     width="100%",                        
                 ),
@@ -61,7 +57,6 @@ def repo2():
 def repo3():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Coderblog Web",font_size=["18px","22px"]),
@@ -91,7 +86,6 @@ def repo3():
 def repo4():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Password Generator",font_size=["18px","22px"]),
@@ -100,7 +94,6 @@ def repo4():
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
                         rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
                         rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
                     width="100%",                        
                 ),
@@ -121,16 +114,12 @@ def repo4():
 def repo5():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Sudoku Generator",font_size=["18px","22px"]),
                     rx.spacer(),
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
                     width="100%",                        
                 ),
@@ -151,16 +140,12 @@ def repo5():
 def repo6():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Metacritic Scraper",font_size=["18px","22px"]),
                     rx.spacer(),
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
                     width="100%",                        
                 ),
@@ -181,21 +166,17 @@ def repo6():
 def repo7():
     return rx.box(
         rx.link(
-                # rx.image(src="/Placeholder.png",width="100vw",height="auto%", object_fit="cover"),
             rx.vstack(
                 rx.flex(
                     rx.text("Image to ASCII Generator",font_size=["18px","22px"]),
                     rx.spacer(),
                     rx.hstack(
                         rx.tooltip(rx.image(src="/langs/icons8-python-32.ico",width=["16px","32px"]),label="Python"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-html-32.ico",width=["16px","32px"]),label="HTML"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-css-32.ico",width=["16px","32px"]),label="CSS"),
-                        # rx.tooltip(rx.image(src="/langs/icons8-javascript-32.ico",width=["16px","32px"]),label="JavaScript"),
                     ),
                     width="100%",                        
                 ),
                 rx.divider(border_color="gray"),
-                rx.text("""My Metacritic game links scraping project is an application I developed while learning Python. This automated tool gathers links to games from Metacritic and stores them in a txt file, making it easier for users to access critical information about games and reviews. The project represents a milestone in my Python learning journey and showcases my web data extraction skills. I utilize requests and xpath libraries along with concurrent futures to run parallel tasks.""",
+                rx.text("""My project for converting images to ASCII characters is an application that takes images as input and transforms them into artistic representations using ASCII characters. This program replaces the pixels of the image with ASCII characters to create a visually unique version of the original image. It showcases my programming skills and offers an intriguing way to interpret images through code.""",
                     style=text_style,
                 ),
                 align_items="self-start",
@@ -211,7 +192,6 @@ def repo7():
 
 
 box_style = {
-    # "padding": "1em",
     "backdrop_filter": "blur(5px)",
     "background_color": "rgb(20, 20, 20, 0.5)",
     "box_shadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px",

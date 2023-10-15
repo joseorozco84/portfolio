@@ -9,7 +9,7 @@ def info():
             I have the versatility to work both collaboratively in teams and independently.
             My determination and dedication drive me to achieve my goals and exceed expectations in every project I undertake.""",
             text_color="white",
-            font_size=["18px","22px"],
+            font_size=["14px","22px"],
             font_weight="bold",
             font_family="monospace",
             margin="3%",
@@ -31,7 +31,7 @@ def page():
             rx.link("Reflex",href="https://reflex.dev/",color="rgb(107,99,246)",is_external=True,),
             """ framework, this website is where I showcase my projects and skills. It's a work in progress, and I'm excited to share my journey with you. """,
             text_color="white",
-            font_size=["18px","22px"],
+            font_size=["14px","22px"],
             font_weight="bold",
             font_family="monospace",
             margin="3%",

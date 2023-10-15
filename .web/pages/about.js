@@ -80,7 +80,7 @@ export default function Component() {
   <TabPanels>
   <TabPanel sx={{"paddingTop": "2px", "padding": "0px"}}>
   <Box sx={{"padding": "1em", "backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
-  <Text sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
+  <Text sx={{"textColor": "white", "fontSize": ["14px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
   {`Hello! 👋 My name is Jose and I am passionate about programming with a strong work ethic.
             My methodical approach and attention to detail allow me to tackle projects meticulously and ensure quality in every line of code I write.
             I am an enthusiastic self-learner who is motivated by technological challenges and quickly acquires new skills and technologies.
@@ -91,7 +91,7 @@ export default function Component() {
 </TabPanel>
   <TabPanel sx={{"paddingTop": "2px", "padding": "0px"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none", "padding": "1em", "height": "fit-content"}}>
-  <Text sx={{"textColor": "white", "fontSize": ["18px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
+  <Text sx={{"textColor": "white", "fontSize": ["14px", "22px"], "fontWeight": "bold", "fontFamily": "monospace", "margin": "3%"}}>
   {`Welcome to my portfolio! Built with `}
   <Link as={NextLink} href={`https://www.python.org/`} isExternal={true} sx={{"color": "rgb(121,246,99)"}}>
   {`Python`}
