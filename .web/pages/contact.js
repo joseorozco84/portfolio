@@ -36,9 +36,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_name = useRef(null); refs['ref_name'] = ref_name;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
     <Fragment>
@@ -74,7 +74,7 @@ export default function Component() {
   <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
   <Box>
   <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
-  <Box as={`form`}>
+  <Box as={`form`} onSubmit={(_e0) => addEvents([Event("parent_state.form_state.handle_submit", {form_data:{"name": getRefValue(ref_name), "message": getRefValue(ref_message), "email": getRefValue(ref_email)}})], (_e0))}>
   <VStack sx={{"rowGap": "1em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}
@@ -83,7 +83,7 @@ export default function Component() {
   <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
   <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
   <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none", "height": "200px", "maxHeight": "300px"}}/>
-  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}}>
+  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}} type={`submit`}>
   {`Send`}
   <EmailIcon/>
 </Button>

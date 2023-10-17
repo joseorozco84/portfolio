@@ -1,5 +1,5 @@
 import reflex as rx
-from .classes import ModalState
+from .classes import ModalState, FormState
 
 
 def form():
@@ -39,6 +39,7 @@ def form():
                         rx.icon(
                             tag="email",
                         ),
+                        type_="submit",
                         bg_color="#2b6cb0",
                         text_color="white",
                         font_family="monospace",
@@ -52,6 +53,8 @@ def form():
                     ),
                     row_gap="1em",
                 ),
+                # submit form content
+                on_submit=FormState.handle_submit,
             ),
             rx.box(
                 rx.modal(
