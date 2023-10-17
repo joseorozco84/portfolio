@@ -11,7 +11,7 @@ export const Navbar = memo(({}) => (
   <Flex sx={{"width": "100%", "maxWidth": "1200px", "minWidth": "50%", "minHeight": "6vh", "padding": "0.5em", "textColor": "white", "fontSize": ["1em", "1.8em", "2em", "2em"], "alignItems": "center", "justifyContent": "space-evenly", "overflow": "hidden"}}>
   <Flex>
   <Container>
-  <Link as={NextLink} href={`/home`} sx={{"fontWeight": "bold", "_hover": {"color": "#2b6cb0"}, "userSelect": "none"}}>
+  <Link as={NextLink} href={`/home`} sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
   {`.home`}
 </Link>
 </Container>
@@ -32,7 +32,7 @@ export const Navbar = memo(({}) => (
   <Spacer/>
   <Container>
   <Menu sx={{"border": "hidden"}}>
-  <MenuButton sx={{"_hover": {"transition": "0.25s", "textColor": "#2b6cb0"}}}>
+  <MenuButton sx={{"_hover": {"color": "#2b6cb0"}, "fontWeight": "bold", "userSelect": "none"}}>
   <Text sx={{"fontWeight": "bold", "userSelect": "none"}}>
   {`.contact`}
 </Text>

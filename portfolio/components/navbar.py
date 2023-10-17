@@ -10,9 +10,7 @@ def navbar():
                     rx.link(
                         ".home",
                         href="/home",
-                        font_weight="bold",
-                        _hover={"color":"#2b6cb0"},
-                        user_select="none",
+                        style=link_style,
                     ),
                 ),
             ),
@@ -22,9 +20,7 @@ def navbar():
                     rx.link(
                         ".projects",
                         href="/projects",
-                        _hover={"color":"#2b6cb0"},
-                        font_weight="bold",
-                        user_select="none",
+                        style=link_style,
                     ),
                 ),
                 rx.spacer(),            
@@ -32,9 +28,7 @@ def navbar():
                     rx.link(
                         ".about",
                         href="/about",
-                        _hover={"color":"#2b6cb0"},
-                        font_weight="bold",
-                        user_select="none",
+                        style=link_style,
                     ),
                 ),
                 rx.spacer(),
@@ -76,10 +70,7 @@ def menu():
                 font_weight="bold",
                 user_select="none",
             ),
-            _hover={
-                "transition": "0.25s",
-                "text_color": "#2b6cb0",
-            },
+            style=link_style,
         ),
         rx.menu_list(
             rx.link(
@@ -173,3 +164,9 @@ def menu():
         ),
         border="hidden",
     )
+
+link_style = {
+    "_hover": {"color":"#2b6cb0"},
+    "font_weight": "bold",
+    "user_select":"none",
+}
