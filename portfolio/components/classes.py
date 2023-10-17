@@ -7,14 +7,7 @@ class ParentState(rx.State):
 class ParentComponent(rx.Component):
     pass
 
-
-  
-class ModalState(ParentState):
-    show : bool = False
-
-    def change(self):
-        self.show = not (self.show)
-
+############################################################################
 
 class ColorPicker(ParentComponent):
     library = "react-colorful"
@@ -29,3 +22,13 @@ class ColorPicker(ParentComponent):
     
 class ColorPickerState(ParentState):
     color: str = "#db114b"
+
+############################################################################
+  
+class ModalState(ParentState):
+    show : bool = False
+
+    def change(self):
+        self.show = not (self.show)
+
+############################################################################

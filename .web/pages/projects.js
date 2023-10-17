@@ -3,9 +3,10 @@ import { useRouter } from "next/router"
 import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Divider, Flex, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useColorMode, VStack } from "@chakra-ui/react"
+import { Box, Button, Divider, Flex, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Spacer, Text, Tooltip, useColorMode, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
 import NextLink from "next/link"
+import { ArrowUpIcon } from "@chakra-ui/icons"
 import NextHead from "next/head"
 
 
@@ -35,6 +36,7 @@ export default function Component() {
     }
   }, [router])
 
+  const ref_top = useRef(null); refs['ref_top'] = ref_top;
 
   return (
     <Fragment>
@@ -66,7 +68,7 @@ export default function Component() {
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>
-  <Box sx={{"width": "90%", "maxWidth": "1200px"}}>
+  <Box id={`top`} ref={ref_top} sx={{"width": "90%", "maxWidth": "1200px"}}>
   <VStack sx={{"gap": "20px", "marginTop": ["20%", "10%"], "marginBottom": "10%"}}>
   <Box sx={{"backdropFilter": "blur(5px)", "backgroundColor": "rgb(20, 20, 20, 0.5)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "userSelect": "none"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84/portfolio`} isExternal={true} sx={{"textColor": "white", "fontSize": ["20px", "24px"], "fontWeight": "bold", "fontFamily": "monospace", "_hover": {"textDecoration": "none", "textColor": "#2b6cb0"}}}>
@@ -236,6 +238,11 @@ export default function Component() {
 </VStack>
 </Link>
 </Box>
+  <Link as={NextLink} href={`#top`} sx={{"position": "static", "bottom": ["1%", "5%"], "zIndex": "1"}}>
+  <Button colorScheme={`red`}>
+  <ArrowUpIcon/>
+</Button>
+</Link>
 </VStack>
 </Box>
 </VStack>

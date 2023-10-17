@@ -36,7 +36,7 @@ def home() -> rx.Component:
         style = box_style,
     )
 
-# portfolio page
+# projects page
 def projects() -> rx.Component:
     return rx.box(
         rx.vstack(
