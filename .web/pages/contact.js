@@ -36,9 +36,9 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
   return (
     <Fragment>
@@ -74,7 +74,7 @@ export default function Component() {
   <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
   <Box>
   <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
-  <Box as={`form`} onSubmit={(_e0) => addEvents([Event("parent_state.form_state.handle_submit", {form_data:{"message": getRefValue(ref_message), "name": getRefValue(ref_name), "email": getRefValue(ref_email)}})], (_e0))}>
+  <Box as={`form`} onSubmit={(_e0) => addEvents([Event("parent_state.form_state.handle_submit", {form_data:{"email": getRefValue(ref_email), "name": getRefValue(ref_name), "message": getRefValue(ref_message)}})], (_e0))}>
   <VStack sx={{"rowGap": "1em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}

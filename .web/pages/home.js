@@ -103,7 +103,7 @@ export default function Component() {
 </Box>
   <NextHead>
   <title>
-  {`Reflex App`}
+  {`Home`}
 </title>
   <meta content={`A Reflex app.`} name={`description`}/>
   <meta content={`favicon.ico`} property={`og:image`}/>

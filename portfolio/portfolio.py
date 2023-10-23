@@ -27,6 +27,7 @@ def color() -> rx.Component:
     )
 
 # home page
+@rx.page(route='/')
 def home() -> rx.Component:
     return rx.box(
         rx.vstack(
@@ -82,7 +83,7 @@ box_style = {
 
 # Add state and page to the app.
 app = rx.App(style=general_text_style)
-app.add_page(home, title="Home", route="/")
+app.add_page(home, title="Home")
 app.add_page(projects, title="Repositories")
 app.add_page(about, title="About")
 app.add_page(contact, title="Contact")
