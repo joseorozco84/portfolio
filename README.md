@@ -1,6 +1,8 @@
 # Portfolio Web Page made with Reflex
-
 This is a personal web page project created with [Reflex](https://reflex.dev), a Python framework for web application development.
+
+![msedge_eKw0se6ED8](https://github.com/joseorozco84/portfolio/assets/81333025/835e512e-a229-4303-9e3d-1e91b2f8472b)
+
 
 ## Requirements:
 
@@ -53,4 +55,4 @@ Once you've installed the dependencies and configured the project, you can run t
 reflex run
 ```
 
-This will start the development server, and you can access the web page at http://localhost:3000 in your browser.
+This will start the development server, and you can access the web page at http://localhost:3000/home in your browser.
