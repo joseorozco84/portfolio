@@ -37,7 +37,6 @@ venv\Scripts\activate
 ```
 
 Install the project's dependencies from the requirements.txt file:
-
 ```bash
 pip install -r requirements.txt
 ```
