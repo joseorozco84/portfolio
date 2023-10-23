@@ -2,26 +2,25 @@
 
 This is a personal web page project created with [Reflex](URL_TO_REPOSITORY), a Python framework for web application development.
 
-## Requirements
+## Requirements:
 
 Before getting started, make sure you have the following requirements installed:
 
 - Python: Make sure you have Python installed on your system. You can download it from [python.org](https://www.python.org/).
 
-## Installation
+## Installation:
 
-1. Clone this repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/your-project.git
-   ```
-   ```bash
-   cd your-project
-   ```
-   
-2. Create a virtual environment (optional but recommended):
+First, you need to download the project files to your computer. Open the terminal and run these commands:
 ```bash
-  python -m venv venv
+git clone https://github.com/your-username/your-project.git
+```
+```bash
+cd your-project
+```
+   
+A virtual environment is like an isolated space where we'll install the project's dependencies. This is optional but highly recommended. Run these commands based on your operating system:
+```bash
+python -m venv venv
 ```
 
 * Unix:
@@ -34,19 +33,20 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-3. Install the project's dependencies from the requirements.txt file:
+Install the project's dependencies from the requirements.txt file:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Initialize the Reflex project:
+## Initialize the Reflex project:
 
+Now, let's set up the Reflex project. Run the following command:
 ```bash
 reflex init
 ```
 
-5. Running the Application
+## Running the Application
 Once you've installed the dependencies and configured the project, you can run the web application with the following command:
 
 ```bash
