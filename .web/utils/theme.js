@@ -1,1 +1,0 @@
-export default {"styles": {"global": {"body": {"fontFamily": "monospace", "textColor": "white"}}}}
