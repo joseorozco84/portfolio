@@ -7,5 +7,4 @@ class PortfolioConfig(rx.Config):
 config = PortfolioConfig(
     app_name="portfolio",
     # frontend_packages=["react-colorful"],
-    api_url="https://portfolio-zdbc.onrender.com:8000"
 )
