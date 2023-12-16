@@ -1,68 +1,19 @@
-import { Fragment, useContext, useEffect, useRef, useState } from "react"
-import { useRouter } from "next/router"
-import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
-import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
-import "focus-visible/dist/focus-visible"
-import { Box, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorMode, VStack } from "@chakra-ui/react"
+
+/** @jsxImportSource @emotion/react */import { Fragment } from "react"
+import { Fragment_fd0e7cb8f9fb4669a6805377d925fba0 } from "/utils/stateful_components"
+import { Box, Link, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
+import "focus-visible/dist/focus-visible"
 import NextLink from "next/link"
 import NextHead from "next/head"
 
 
 
 export default function Component() {
-  const parent_state = useContext(StateContext)
-  const router = useRouter()
-  const { colorMode, toggleColorMode } = useColorMode()
-  const focusRef = useRef();
-  
-  // Main event loop.
-  const [addEvents, connectError] = useContext(EventLoopContext)
-
-  // Set focus to the specified element.
-  useEffect(() => {
-    if (focusRef.current) {
-      focusRef.current.focus();
-    }
-  })
-
-  // Route after the initial page hydration.
-  useEffect(() => {
-    const change_complete = () => addEvents(initialEvents.map((e) => ({...e})))
-    router.events.on('routeChangeComplete', change_complete)
-    return () => {
-      router.events.off('routeChangeComplete', change_complete)
-    }
-  }, [router])
-
 
   return (
     <Fragment>
-  <Fragment>
-  {isTrue(connectError !== null) ? (
-  <Fragment>
-  <Modal isOpen={connectError !== null}>
-  <ModalOverlay>
-  <ModalContent>
-  <ModalHeader>
-  {`Connection Error`}
-</ModalHeader>
-  <ModalBody>
-  <Text>
-  {`Cannot connect to server: `}
-  {(connectError !== null) ? connectError.message : ''}
-  {`. Check if server is reachable at `}
-  {`http://localhost:8000`}
-</Text>
-</ModalBody>
-</ModalContent>
-</ModalOverlay>
-</Modal>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
+  <Fragment_fd0e7cb8f9fb4669a6805377d925fba0/>
   <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
   <VStack>
   <Navbar/>

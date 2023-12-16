@@ -1,96 +1,23 @@
-import { Fragment, useContext, useEffect, useRef, useState } from "react"
-import { useRouter } from "next/router"
-import { Event, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, set_val, spreadArraysOrObjects, uploadFiles, useEventLoop } from "/utils/state"
-import { EventLoopContext, initialEvents, StateContext } from "/utils/context.js"
-import "focus-visible/dist/focus-visible"
-import { Box, Button, Divider, Heading, HStack, Image, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, useColorMode, VStack } from "@chakra-ui/react"
+
+/** @jsxImportSource @emotion/react */import { Fragment, useCallback, useContext, useRef } from "react"
+import { Fragment_fd0e7cb8f9fb4669a6805377d925fba0 } from "/utils/stateful_components"
+import { Box, Button, Divider, Heading, HStack, Image as ChakraImage, Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Text, Textarea, VStack } from "@chakra-ui/react"
 import { Navbar } from "/utils/components"
+import { EventLoopContext, StateContexts } from "/utils/context"
+import { Event, getRefValue, getRefValues, refs, set_val } from "/utils/state"
+import "focus-visible/dist/focus-visible"
 import { EmailIcon } from "@chakra-ui/icons"
 import NextLink from "next/link"
 import NextHead from "next/head"
 
 
 
-export default function Component() {
-  const parent_state = useContext(StateContext)
-  const router = useRouter()
-  const { colorMode, toggleColorMode } = useColorMode()
-  const focusRef = useRef();
-  
-  // Main event loop.
-  const [addEvents, connectError] = useContext(EventLoopContext)
+export function Modal_0435852a89b0ca7aaeea583615fc8eea () {
+  const state__parent_state__modal_state = useContext(StateContexts.state__parent_state__modal_state)
 
-  // Set focus to the specified element.
-  useEffect(() => {
-    if (focusRef.current) {
-      focusRef.current.focus();
-    }
-  })
-
-  // Route after the initial page hydration.
-  useEffect(() => {
-    const change_complete = () => addEvents(initialEvents.map((e) => ({...e})))
-    router.events.on('routeChangeComplete', change_complete)
-    return () => {
-      router.events.off('routeChangeComplete', change_complete)
-    }
-  }, [router])
-
-  const ref_message = useRef(null); refs['ref_message'] = ref_message;
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
 
   return (
-    <Fragment>
-  <Fragment>
-  {isTrue(connectError !== null) ? (
-  <Fragment>
-  <Modal isOpen={connectError !== null}>
-  <ModalOverlay>
-  <ModalContent>
-  <ModalHeader>
-  {`Connection Error`}
-</ModalHeader>
-  <ModalBody>
-  <Text>
-  {`Cannot connect to server: `}
-  {(connectError !== null) ? connectError.message : ''}
-  {`. Check if server is reachable at `}
-  {`http://localhost:8000`}
-</Text>
-</ModalBody>
-</ModalContent>
-</ModalOverlay>
-</Modal>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
-  <VStack>
-  <Navbar/>
-  <Box sx={{"width": "90%", "maxWidth": "800px"}}>
-  <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
-  <Box>
-  <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
-  <Box as={`form`} onSubmit={(_e0) => addEvents([Event("parent_state.form_state.handle_submit", {form_data:{"email": getRefValue(ref_email), "message": getRefValue(ref_message), "name": getRefValue(ref_name)}})], (_e0))}>
-  <VStack sx={{"rowGap": "1em"}}>
-  <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
-  {`Contact me`}
-</Heading>
-  <Divider sx={{"borderColor": "gray"}}/>
-  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
-  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
-  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none", "height": "200px", "maxHeight": "300px"}}/>
-  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}} type={`submit`}>
-  {`Send`}
-  <EmailIcon/>
-</Button>
-</VStack>
-</Box>
-  <Box>
-  <Modal isCentered={true} isOpen={parent_state.modal_state.show}>
+    <Modal isCentered={true} isOpen={state__parent_state__modal_state.show}>
   <ModalOverlay sx={{"userSelect": "none"}}>
   <ModalContent sx={{"textColor": "black", "maxWidth": "300px", "bgColor": "rgb(255, 255, 255)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px"}}>
   <ModalHeader>
@@ -100,13 +27,90 @@ export default function Component() {
   {`Your message has been sent!`}
 </ModalBody>
   <ModalFooter>
-  <Button onClick={(_e) => addEvents([Event("parent_state.modal_state.change", {})], (_e))} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
-  {`Close`}
-</Button>
+  <Button_b40d9e1211b55fe86cd0dc99fadf5939/>
 </ModalFooter>
 </ModalContent>
 </ModalOverlay>
 </Modal>
+  )
+}
+
+export function Button_b40d9e1211b55fe86cd0dc99fadf5939 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_ddfddae1a07572c6d626cfd1fc442364 = useCallback((_e) => addEvents([Event("state.parent_state.modal_state.change", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
+  {`Close`}
+</Button>
+  )
+}
+
+export function Box_9615d47ab90e373e1ac865255a36cb23 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
+  const ref_message = useRef(null); refs['ref_message'] = ref_message;
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  
+    const handleSubmit_6f8653f64b2642836b9d6a45f3a54580 = useCallback((ev) => {
+        const $form = ev.target
+        ev.preventDefault()
+        const form_data = {...Object.fromEntries(new FormData($form).entries()), ...{"message": getRefValue(refs['ref_message']), "email": getRefValue(refs['ref_email']), "name": getRefValue(refs['ref_name'])}}
+
+        addEvents([Event("state.parent_state.form_state.handle_submit", {form_data:form_data})])
+
+        if (false) {
+            $form.reset()
+        }
+    })
+    
+
+
+  return (
+    <Box as={`form`} onSubmit={handleSubmit_6f8653f64b2642836b9d6a45f3a54580}>
+  <VStack sx={{"rowGap": "1em"}}>
+  <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
+  {`Contact me`}
+</Heading>
+  <Divider sx={{"borderColor": "gray"}}/>
+  <Input id={`name`} isRequired={true} placeholder={`Name...`} ref={ref_name} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
+  <Input id={`email`} placeholder={`Email...`} ref={ref_email} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none"}} type={`text`}/>
+  <Textarea id={`message`} isRequired={true} placeholder={`Write your message...`} ref={ref_message} sx={{"bgColor": "rgb(255, 255, 255, 0.75)", "textColor": "black", "borderColor": "transparent", "resize": "none", "height": "200px", "maxHeight": "300px"}}/>
+  <Button_44df1b6c107f2260e34dd7f997cdadc0/>
+</VStack>
+</Box>
+  )
+}
+
+export function Button_44df1b6c107f2260e34dd7f997cdadc0 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_ddfddae1a07572c6d626cfd1fc442364 = useCallback((_e) => addEvents([Event("state.parent_state.modal_state.change", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}} type={`submit`}>
+  {`Send`}
+  <EmailIcon/>
+</Button>
+  )
+}
+
+export default function Component() {
+
+  return (
+    <Fragment>
+  <Fragment_fd0e7cb8f9fb4669a6805377d925fba0/>
+  <Box sx={{"maxWidth": "100%", "minHeight": "100vh", "backgroundImage": "linear-gradient(338deg, #090b19 6.75%, #0f1c36 50.75%, #546283 88.52%)", "backgroundPosition": "center", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"}}>
+  <VStack>
+  <Navbar/>
+  <Box sx={{"width": "90%", "maxWidth": "800px"}}>
+  <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
+  <Box>
+  <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
+  <Box_9615d47ab90e373e1ac865255a36cb23/>
+  <Box>
+  <Modal_0435852a89b0ca7aaeea583615fc8eea/>
 </Box>
 </Box>
 </Box>
@@ -114,7 +118,7 @@ export default function Component() {
   <HStack sx={{"gap": "2em"}}>
   <Link as={NextLink} href={`https://github.com/joseorozco84`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <VStack sx={{"bgColor": "rgb(97, 30, 30, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(97, 30, 30, 0.95)"}}}>
-  <Image src={`/github_white.png`} sx={{"width": "48px"}}/>
+  <ChakraImage src={`/github_white.png`} sx={{"width": "48px"}}/>
   <Text>
   {`GitHub`}
 </Text>
@@ -122,7 +126,7 @@ export default function Component() {
 </Link>
   <Link as={NextLink} href={`https://www.linkedin.com/in/jose-orozco-79367143/`} isExternal={true} sx={{"_hover": {"textDecoration": "none"}}}>
   <VStack sx={{"bgColor": "rgb(30, 63, 100, 0.45)", "borderRadius": "5px", "padding": "20px", "width": "100px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s", "bgColor": "rgb(30, 63, 100, 0.95)"}}}>
-  <Image src={`/linkedin_white.png`} sx={{"width": "48px"}}/>
+  <ChakraImage src={`/linkedin_white.png`} sx={{"width": "48px"}}/>
   <Text>
   {`Linkedin`}
 </Text>
