@@ -45,7 +45,7 @@ def form():
                         font_family="monospace",
                         size="lg",
                         column_gap="5px",
-                        on_click=ModalState.change,
+                        # on_click=ModalState.change,
                         _hover={
                             "transform": "scale(1.1)",
                             "transition": "0.25s",
