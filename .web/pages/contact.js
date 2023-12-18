@@ -12,6 +12,18 @@ import NextHead from "next/head"
 
 
 
+export function Button_b40d9e1211b55fe86cd0dc99fadf5939 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_click_ddfddae1a07572c6d626cfd1fc442364 = useCallback((_e) => addEvents([Event("state.parent_state.modal_state.change", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
+  {`Close`}
+</Button>
+  )
+}
+
 export function Modal_0435852a89b0ca7aaeea583615fc8eea () {
   const state__parent_state__modal_state = useContext(StateContexts.state__parent_state__modal_state)
 
@@ -35,28 +47,27 @@ export function Modal_0435852a89b0ca7aaeea583615fc8eea () {
   )
 }
 
-export function Button_b40d9e1211b55fe86cd0dc99fadf5939 () {
+export function Button_44df1b6c107f2260e34dd7f997cdadc0 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
   const on_click_ddfddae1a07572c6d626cfd1fc442364 = useCallback((_e) => addEvents([Event("state.parent_state.modal_state.change", {})], (_e), {}), [addEvents, Event])
 
   return (
-    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} sx={{"bgColor": "#2b6cb0", "textColor": "white"}}>
-  {`Close`}
+    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}} type={`submit`}>
+  {`Send`}
+  <EmailIcon/>
 </Button>
   )
 }
 
-export function Box_9615d47ab90e373e1ac865255a36cb23 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-  const ref_name = useRef(null); refs['ref_name'] = ref_name;
+export function Box_edc2d23d89271c2a76a2556c156192fa () {
   const ref_message = useRef(null); refs['ref_message'] = ref_message;
-  const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const [addEvents, connectError] = useContext(EventLoopContext);
   
-    const handleSubmit_6f8653f64b2642836b9d6a45f3a54580 = useCallback((ev) => {
+    const handleSubmit_6e57730519de3990119ca798e51fa5c6 = useCallback((ev) => {
         const $form = ev.target
         ev.preventDefault()
-        const form_data = {...Object.fromEntries(new FormData($form).entries()), ...{"message": getRefValue(refs['ref_message']), "email": getRefValue(refs['ref_email']), "name": getRefValue(refs['ref_name'])}}
+        const form_data = {...Object.fromEntries(new FormData($form).entries()), ...{"message": getRefValue(refs['ref_message']), "name": getRefValue(refs['ref_name']), "email": getRefValue(refs['ref_email'])}}
 
         addEvents([Event("state.parent_state.form_state.handle_submit", {form_data:form_data})])
 
@@ -65,10 +76,12 @@ export function Box_9615d47ab90e373e1ac865255a36cb23 () {
         }
     })
     
+  const ref_email = useRef(null); refs['ref_email'] = ref_email;
+  const ref_name = useRef(null); refs['ref_name'] = ref_name;
 
 
   return (
-    <Box as={`form`} onSubmit={handleSubmit_6f8653f64b2642836b9d6a45f3a54580}>
+    <Box as={`form`} onSubmit={handleSubmit_6e57730519de3990119ca798e51fa5c6}>
   <VStack sx={{"rowGap": "1em"}}>
   <Heading sx={{"userSelect": "none", "textColor": "rgb(255, 255, 255)", "fontSize": ["1.5em", "1.8em", "1.8em", "1.8em", "2em"], "fontFamily": "monospace"}}>
   {`Contact me`}
@@ -80,19 +93,6 @@ export function Box_9615d47ab90e373e1ac865255a36cb23 () {
   <Button_44df1b6c107f2260e34dd7f997cdadc0/>
 </VStack>
 </Box>
-  )
-}
-
-export function Button_44df1b6c107f2260e34dd7f997cdadc0 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_ddfddae1a07572c6d626cfd1fc442364 = useCallback((_e) => addEvents([Event("state.parent_state.modal_state.change", {})], (_e), {}), [addEvents, Event])
-
-  return (
-    <Button onClick={on_click_ddfddae1a07572c6d626cfd1fc442364} size={`lg`} sx={{"bgColor": "#2b6cb0", "textColor": "white", "fontFamily": "monospace", "columnGap": "5px", "_hover": {"transform": "scale(1.1)", "transition": "0.25s"}}} type={`submit`}>
-  {`Send`}
-  <EmailIcon/>
-</Button>
   )
 }
 
@@ -108,7 +108,7 @@ export default function Component() {
   <SimpleGrid sx={{"marginTop": ["20%", "10%"], "marginBottom": "10%", "gap": "20px"}}>
   <Box>
   <Box sx={{"justifyContent": "center", "padding": ["2em", "2em", "3em", "3em"], "backgroundColor": "rgb(20, 20, 20, 0.5)", "backdropFilter": "blur(5px)", "boxShadow": "rgba(0, 0, 0, 0.8) 0 15px 30px -10px", "borderRadius": "10px", "placeSelf": "center", "userSelect": "none"}}>
-  <Box_9615d47ab90e373e1ac865255a36cb23/>
+  <Box_edc2d23d89271c2a76a2556c156192fa/>
   <Box>
   <Modal_0435852a89b0ca7aaeea583615fc8eea/>
 </Box>

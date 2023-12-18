@@ -10,6 +10,16 @@ import NextHead from "next/head"
 
 
 
+export function Hexcolorpicker_165c5171c295cb3fc229821c30e06a7e () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_change_f89bb59b5d6399e3a64ec96fbbaf7885 = useCallback((_e0) => addEvents([Event("state.parent_state.color_picker_state.set_color", {value:_e0})], (_e0), {}), [addEvents, Event])
+
+  return (
+    <HexColorPicker onChange={on_change_f89bb59b5d6399e3a64ec96fbbaf7885}/>
+  )
+}
+
 export function Text_a15494a0b363d8763b397cf848af8c0c () {
   const state__parent_state__color_picker_state = useContext(StateContexts.state__parent_state__color_picker_state)
 
@@ -38,16 +48,6 @@ export function Box_16bb63769182da016ff1b1233ca50d3b () {
   <Hexcolorpicker_165c5171c295cb3fc229821c30e06a7e/>
 </VStack>
 </Box>
-  )
-}
-
-export function Hexcolorpicker_165c5171c295cb3fc229821c30e06a7e () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_change_f89bb59b5d6399e3a64ec96fbbaf7885 = useCallback((_e0) => addEvents([Event("state.parent_state.color_picker_state.set_color", {value:_e0})], (_e0), {}), [addEvents, Event])
-
-  return (
-    <HexColorPicker onChange={on_change_f89bb59b5d6399e3a64ec96fbbaf7885}/>
   )
 }
 
